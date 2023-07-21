@@ -1,0 +1,23 @@
+
+.div1:hover {
+    color: red;
+}
+
+.div2:active{
+    background-color: blue;
+}
+
+.div3:focus{
+    background-color: orange;
+}
+
+/* E:nth-child(n): E가 n번째 요소라면 선택 */
+.stripes > *:nth-child(2n){
+    background-color: yellow;
+}
+
+.stripes > *:nth-child(2n-1){
+    color : white;
+    background-color: navy;
+}
+

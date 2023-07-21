@@ -1,0 +1,30 @@
+
+
+.div1 {
+    width: 700px;
+    height: 500px;
+    z-index: 3;
+    position:absolute;
+    top: 500px;
+    left: 800px; 
+    transform: skewY(20deg);
+}
+
+.div2 {
+    width: 700px;
+    height: 500px;
+    position:absolute;
+    top: 500px;
+    left: 1200px;
+    z-index: 2;
+    transform: skewY(20deg);
+}
+.div3 {
+    width: 700px;
+    height: 500px;
+    position:absolute;
+    top: 500px;
+    left: 1600px;
+    z-index: 1;
+    transform: skewY(20deg);
+}

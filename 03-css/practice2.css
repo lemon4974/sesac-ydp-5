@@ -1,0 +1,17 @@
+*{
+    /* *은 전체 선택자 */
+    color:white;
+    background-color: grey;
+}
+
+span{
+    background-color: red;
+}
+
+#first{
+    background-color: blue;
+}
+
+.second{
+    background-color: green;
+}

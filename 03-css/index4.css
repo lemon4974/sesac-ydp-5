@@ -1,0 +1,84 @@
+.div1{
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+}
+/* 요소에 마우스를 올렸을 때 */
+.div1:hover {
+    background-color: hotpink;
+    height: 150px;
+}
+/* 요소를 마우스로 클릭하고 있을 때 */
+/* 마우스를 올렸을 때 150px의 height에 클릭하면 height에 width가지 확장됨.
+즉 위의 값을 유지하고 있다.
+하지만 색깔의 경우 충돌하게 되는데 후의 요소가 우선순위를 갖기에 brown이 된다. */
+.div1:active{
+    background-color: brown;
+    width: 150px;
+}
+
+input:focus{
+    background-color: blueviolet;
+    color:#ffffff;
+    outline-color:yellowgreen;
+}
+
+.links > a:hover {
+    background-color: coral;
+}
+/* 방문한 링크에 대해서 색 차이 */
+/* 질문 */
+.links > a:visited{
+    color:#ccc;
+    /* 위의 컬러 코드는 #cccccc와 같다. */
+}
+/* 요소 상황에 따른 가상 선택자 */
+.zoo > * {
+    background-color: green;
+    color: white;
+
+}
+/* E:last-child: E가 마지막 요소라면 */
+.zoo >li:last-child{
+    background-color: black;
+}
+/* E:first-child: E가 첫 요소라면 */
+/* first-child는 하나의 유일한 특성 div는 여러 개가 존재
+> 따라서 우선 순위가 first-child가 더 높아 배경색이 빨간색이 되는 것...
+
+CSS는 잘못 썼거나 우선순위 때문에 출력이 잘못 되었을 것이다.*/
+.zoo > *:first-child {
+    background-color: red;
+}
+/* E:not(XYZ) : XYZ가 아닌 요소 선택 */
+.zoo > *:not(div){
+    background-color: pink;
+}
+/* E:nth-child(n): E가 n번째 요소라면 선택 */
+.zoo > *:nth-child(2n){
+    background-color: aqua;
+}
+
+.box::before {
+    content: '택시~';
+    font-weight: bold;
+    color : red;
+}
+
+.box::after{
+    content: '빨리';
+    font-weight: bold;
+    color : blue !important;
+}
+
+[disabled] {
+    background-color: red;
+}
+
+[placeholder="이름"]{
+    background-color: orange;
+}
+
+input:not([placeholder]){
+    background-color: blue;
+}

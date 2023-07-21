@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 10000px;
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 100px;
+}
+
+/* static: 기본값
+    - 기본값이기 때문에 작성하지 않더라도 적용 
+    - inline 요소; 왼->오 쌓임
+    - block 요소; 위 -> 아래 쌓임
+*/
+.position-static {
+    background-color: pink;
+    position: static;
+}
+/* relative: 상대 위치
+    - 일반적인 흐름에 따라 배치, top/bottom/left/right 중 하나 이상 작성 해야 함
+    "원래 있어야 하는 위치 기준"으로 부터 top/bottom/left/right씩 이동
+*/
+.position-relative {
+    background-color: aquamarine;
+    position: relative;
+    left:300px;
+}
+/* absolute: 절대 위치
+    누구를 기준? position속성을 갖는 제일 가까운 조상 기준
+    position속성을 갖는 조상이 없다면? body 기준
+    ->특정 요소를 기준 삼아서 top, bottom, left, right 씩 움직이겠다.
+ */
+.position-absolute {
+    background-color: gold;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+
+}
+/* fixed: 고정 위치
+    - viewport(브라우저의 화면 전체)기준으로 특정 위치 배치
+    - 헤더 같은 속성에 이 속성을 많이 이용함.
+    - 스크롤 되어도 움직이지 않음.
+ */
+.position-fixed {
+    background-color: coral;
+    position: fixed;
+    top: 0;
+    right: 0;
+}

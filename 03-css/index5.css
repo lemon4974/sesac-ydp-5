@@ -1,0 +1,71 @@
+body{
+    /* 
+        웹폰트
+        -모든 브라우저에서 보는 폰트를 통일
+        - 폰트를 다운로드 하는 것이 아니라 link 태그에
+             걸려있는 주소에서 폰트를 가져오는 방식
+        - 보통 기본 폰트는 body 태그에 작성
+    
+    
+    */
+
+
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 폰트 */
+/* font-size: 50px; */
+/* 폰트 굵기
+    - lighter, normal, bold, bolder
+    - 100 ~ 900
+*/
+/* font-weight: 900; */
+/* 폰트 모양
+    - normal, italic, oblique    
+*/
+/* font-style: italic; */
+/* 정렬: center, left, right, justify(양쪽정렬) */
+/* text-align: center; */
+/* 글자 선: underline, lint-through, overline, none */
+/* text-decoration: underline; */
+/* 줄 높이: px, 1.2(default) */
+/* line-height: 3; */
+
+div{
+    color: red;
+    /* background-color: pink; */
+    background: linear-gradient(to right, navy, skyblue);
+    /* background: linear-gradient(70deg, pink, black) */
+
+    /* 폰트 */
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    /* justify는 양쪽 정렬 */
+    text-decoration: underline;
+    line-height: 10;
+
+    width:1000px;
+    height:200px;
+
+    /* border-style: solid;
+    border-width: 4px;
+    border-radius:20px; */
+
+    /* 단축 프로퍼티 */
+    /* border:4px solid lime; */
+    /* 한쪽 모서리만 top bottom right left */
+    border-top:4px solid grey;
+    border-radius:20px;
+
+    /* 여백 */
+    
+
+    /* 박스모델 */
+    /* box-sizing: content-box; */
+    box-sizing: border-box;
+    /* 둘 중 어떤 것을 선택하느냐에 따라 계산이 달라짐. */
+} 
+
+/* 여백 속성 마진(경계 밖 여백) 패딩(경계 안 여백) */
+/* 어우 머리가 안 돌아가는 데  */

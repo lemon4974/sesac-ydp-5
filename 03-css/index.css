@@ -1,0 +1,7 @@
+li{
+    /* 글씨 크기 조절 */
+    /* 브라우저는 본래 16px */
+    font-size: 10px;
+    color: white;
+    background-color: black;
+}

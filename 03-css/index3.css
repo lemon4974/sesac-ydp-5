@@ -1,0 +1,44 @@
+/* 하위(후손) 선택자: 공백(띄어쓰기)*/
+body section{
+    border: 1px solid blue;
+    /* 경계선: 두께 선스타일(solid) 선색상 */
+}
+/* 복합 선택자는 두 개일 필요 없다. 3개도 간으 */
+body section h2{
+    border: 1px solid green;
+}
+
+/* 자식 선택자: > */
+.first > h2{
+    color:white;
+    background-color: navy;
+}
+
+.second > h2 {
+    color:navy;
+    background-color:pink;
+}
+
+/* 인접 형제 선택자: + */
+/* kong이라는 아이디를 갖는 요소 뒤에 li 태그가 있어야만 적용
+span 태그가 바로 뒤에 있기 때문에 적용x, span 태그 주석 처리 시 가능 */
+#kong + li{
+    background-color: aqua;
+}
+
+/* 일반 형제 선택자 */
+#kong ~ li{
+    /* color : red;
+    color:#ff0000; */
+    color: rgb(255,0,0);
+}
+
+/* CSS에서 색상 
+https://developer.mozilla.org/ko/docs/Web/CSS/color_value
+*/
+/* 
+1. 색상 키워드: red, blue, green, ...
+2. 16진수 코드
+0 ~ 9, a, b, c, d, e, f:16개의 기호로 코드 표현
+3. rgb(0~255,0~255,0~255)
+  */

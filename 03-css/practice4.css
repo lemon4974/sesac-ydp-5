@@ -1,0 +1,101 @@
+body > .lion{
+    background-color: red;
+}
+
+ul > .lion{
+    background-color: greenyellow;
+}
+
+#tiger{
+    background-color: yellow;
+}
+
+
+.lion{
+    color:sienna;
+}
+/* 블로깅 */
+.zoo  .lion{
+    font-weight: bold;
+}
+#tiger + li{
+    background-color: skyblue;
+} 
+
+/* 블로깅 */
+.zoo li.lion ~ li {
+    background-color: orange;
+}
+
+/*
+A.B A태그이자 B 클래스를 갖는 요소 
+선택자선택자: 선택자이자 선택자인 요소
+
+위의 li.lion...
+ */
+
+ /** sean leader님 코드
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>복합선택자 간단한 실습</title>
+    <style>
+      /* 야생의 사자 -배경 red */
+      /* p.lion {
+        background-color: red;
+      }
+
+      /* 사파리 안의 사자만 선택 */
+      .zoo ul .lion {
+        background-color: greenyellow;
+      }
+
+      /* 호랑이 선택 */
+      #tiger {
+        background-color: yellow;
+      }
+
+      /* 모든 사자 선택 */
+      .lion {
+        color: sienna;
+      }
+
+      /* 동물원 안의 사자 선택 */
+      .zoo .lion {
+        font-weight: bold;
+      }
+
+      /* 사육사 allie 를 선택 */
+      /* .zoo > ul > li.lion + li {
+        /* li.lion이 아닌 .lion+li를 한다면 사육사 뿐만 아니라 사자2도 선택됨 */
+        background-color: skyblue;
+      } */
+
+      /* 사파리 사자 뒤에 있는 사육사를 모두 선택 */
+      /* .zoo li.lion ~ li {
+        color: gray;
+      } */ */
+    /* </style>
+  </head>
+  <body>
+    <h1>복합선택자 사용 연습</h1>
+    <p>동물원에 왔어요</p>
+    <div class="zoo">
+      <ul>
+        <span>여긴 사파리!</span>
+        <li>곰</li>
+        <li id="tiger">호랑이</li>
+        <li>팬더</li>
+        <span class="lion">사자1</span>
+        <li class="lion">사자2</li>
+        <li>사육사 allie</li>
+        <li>사육사 진형</li>
+      </ul>
+      <span class="lion"> 사파리 밖의 사자</span>
+    </div>
+    <p class="lion">야생의 사자</p>
+  </body> */
+/* </html>  */
