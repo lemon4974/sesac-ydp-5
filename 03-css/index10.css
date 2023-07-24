@@ -1,0 +1,59 @@
+.d-inline1{
+    display:inline;
+    background-color: pink;
+}
+
+.d-inline2{
+    /* span 처럼 할당된 공간만 차지하고, 줄바꿈 없음 */
+    display:inline;
+    background-color: aqua;
+}
+
+.d-block1{
+    display:block;
+    background-color: antiquewhite;
+    width: 500px;
+}
+
+.d-block2{
+    display: block;
+    background-color: azure;
+    width: 400px;
+}
+/* 길이가 짧아진다고 해도 줄바꿈(개행)처리는 된다 */
+
+.d-inline-block1{
+    display: inline-block;
+    background-color: bisque;
+    width: 500px;
+}
+
+.d-inline-block2{
+    display: inline-block;
+    background-color: cadetblue;
+    width: 200px;
+    height: 400px;
+    /* margin: 20px;
+    margin-top:auto;
+    margin-bottom: 30px; */
+    /* margin: 20px 40px 20px 40px; */
+    /* 위에서부터 시계방향 지정*/
+    magin: 20px 40px;
+    /* 위 아래, 좌우 여백 */
+}
+/* content만큼의 사이즈를 갖고 다른 내용과 같은 줄 차지, 크기 지정도 자유 */
+.d-none{
+    display: none;
+    background-color: aquamarine;
+    width: 100px;
+    height: 100px;
+}
+/* 숨겨야 할때 자리도 없앨 때 영역 자체가 사라짐 */
+.box{
+    /* visible와 hidden 반대 */
+    visibility: hidden;
+    background-color: blueviolet;
+    width: 100px;
+    height: 100px;
+}
+/*  숨겨야 하는데 자리는 남아야할 때 사용*/

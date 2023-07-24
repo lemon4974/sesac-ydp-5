@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+
+ul{
+    /* ul 태그가 기본적으로 가지고 있는 스타일을 없앰 */
+    list-style: none;
+    padding:0;
+    margin: 0;
+}
+
+header{
+    background-color: #ddd;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 200px;
+    padding:0 20px;
+}
+
+.header1{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+/* 여기를 못 함. */
+.header1 .menus{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.header1 .menus li{
+    margin-left: 20px;
+}
+
+
+
+.header2 .menus{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.header1{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.header4{
+    
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.header4 .menus{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.header4 .menus li{
+    margin: 0 20px;
+}
+
+/* 인프런에서 flex 사용 방식 관찰할 것 */
