@@ -1,0 +1,33 @@
+.circle{
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    border-radius: 50%;
+    position: relative;
+    
+    animation: circulation 3s ease-out 6;
+
+}
+
+@keyframes circulation {
+    0%{  
+        left: 0px;
+        top:0px;
+    }
+    25%{
+        left:100px;
+        top:0px;
+    }
+    50%{
+        left:100px;
+        top:100px;
+    }
+    75%{
+        top:100px;
+        left:0px
+    }
+    100%{
+        top:100px;
+        left:0px;
+    }
+}
