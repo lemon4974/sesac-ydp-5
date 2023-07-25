@@ -1,8 +1,14 @@
+h1 {
+    width: 300px;
+    margin: 0 auto;
+}
+
 /* container가 flex 부모 요소 */
 .container {
-    width: 300px;
-    height: 400px;
-    background-color: #333;
+    width: 700px;
+    height: 300px;
+    background-color: rgb(218, 235, 241);
+
     /* margin 좌우 방향 가운데 배치의 명령어, width가 설정되어 있어야 의미가 있다 */
     margin: 0 auto;
 
@@ -43,6 +49,7 @@
         - space-evenly: start부터 첫 아이템의 간격, 아이템 끼리의 간격, 마지막 아이템 부터 end 까지의 모든 간격이 일정
     */
 
+    /* justify-content: center; */
     /* justify-content: flex-start; */
     /* justify-content: flex-end; */
     /* justify-content: space-between; */
@@ -108,12 +115,12 @@
 }
 
 .item1{
-    background-color: blue;
+    background-color: rgb(176, 176, 217);
 
 }
 
 .item2{
-    background-color: purple;
+    background-color: rgb(207, 121, 207);
 
 }
 
@@ -123,12 +130,33 @@
 }
 
 .item4{
-    background-color: red;
+    background-color: rgb(229, 132, 132);
 
 }
 
 .item5{
-    background-color: grey;
+    background-color: rgb(155, 213, 155);
+
+}
+
+.item6{
+    background-color: rgb(155, 213, 155);
+
+}
+.item7{
+    background-color: rgb(155, 213, 155);
+
+}
+.item8{
+    background-color: rgb(155, 213, 155);
+
+}
+.item9{
+    background-color: rgb(155, 213, 155);
+
+}
+.item10{
+    background-color: rgb(155, 213, 155);
 
 }
 
