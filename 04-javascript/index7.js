@@ -73,3 +73,5 @@ for (let i = 0; i < 100; i++) {
   sum3 = sum3 + i;
   console.log(i, sum3);
 }
+
+//나중에 수업 코드 찾아볼 것 수업 때ㅐ 집중 흐려짐

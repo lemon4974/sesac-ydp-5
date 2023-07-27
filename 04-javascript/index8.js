@@ -90,3 +90,5 @@ console.log(arr2.join('-'));
 console.log('hello'.split(''));
 console.log('hello'.split('').reverse());
 console.log('hello'.split('').reverse().join(''));
+
+//배열에서의 기타 메서드 프론트에서 많이 스임
