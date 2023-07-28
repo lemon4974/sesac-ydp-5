@@ -186,3 +186,13 @@ const filterWords2 = words.filter(function (g) {
 });
 // const filterWords2 = words.filter((word)=>word.includes('a'));
 console.log(filterWords2);
+
+////////////////////////////////
+// for in 반복문
+// 객체의 key를 반복할 수 있는 구문
+
+const me = { name: 'Sean', gender: 'f', hobby: 'movie' };
+for (let key in me) {
+  console.log(key, me[key]);
+  //여기서 점표기법을 사용할 수 없다.
+}
