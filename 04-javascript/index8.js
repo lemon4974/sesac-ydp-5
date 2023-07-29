@@ -1,17 +1,20 @@
 // 문자열 관련 내장 메서드
+
+console.log('---String Method---');
+
 let str1 = 'Strawberry Moon';
 let str2 = '    Strawberry Moon    ';
 
 // 문자열 인덱싱
-console.log(str1[0]);
-console.log(str1[0] + str1[12]);
+console.log(str1[0]); //S
+console.log(str1[0] + str1[12]); //So
 
 // Sonny
 console.log(str1[0] + str1[12] + str1[14] + str1[14] + str1[9]);
 
 // 문자열의 길이 (length는 메서드가 아닌 "속성")
 console.log(str1.length);
-console.log(str2.length);
+console.log(str2.length); //공백이 포함되어 길이를 알려줌을 알 수 있다.
 
 // 대/소문자 변환
 console.log(str1.toUpperCase());
@@ -31,23 +34,26 @@ console.log(str1.indexOf('x'));
 
 // slice() 문자열 자르기
 console.log(str1.slice(11)); // 11 번 위치의 글자 ~ 끝
-console.log(str1.slice(1, 5)); // start(1) ~ end-1(4)까지 자르기
+console.log(str1.slice(1, 6)); // start(1) ~ end-1(4)까지 자르기
 
 // replace() 문자열 바꾸기
 console.log(str1.replace('a', 'x'));
-console.log(str1.replace('r', 'x'));
-console.log(str1.replaceAll('r', '*'));
+console.log(str1.replace('r', 'x')); // 첫 번째의 r만 x로 replace한다.
+console.log(str1.replaceAll('r', '*')); //
 
 // split() 문자열 쪼개기 (배열로 변환)
 let date = '23.03.10';
 console.log(date.split('.'));
-console.log(date.split('3'));
+console.log(date.split('3')); //3을 제거하고, 그 부분을 기준으로 나눈다
 
 // repeat()
 console.log('hi'.repeat(5));
 
 ////////////////////////////////////////
+console.log('                  ');
+console.log('---Array Method---');
 // 배열 내장 메서드
+
 let arr1 = [1, 2, 3, 4, 5];
 let arr2 = ['quokka', 'rabbit', 'puppy', 'hamster'];
 
@@ -105,12 +111,12 @@ const alphabets = ['a', 'b', 'c', 'd'];
 for (let a = 0; a < arr3.length; a++) {
   console.log(arr2[a]);
 }
-
+console.log('---For of 문---');
 for (let alpha of alphabets) {
   console.log(alpha);
 }
 //더 간편하다
-
+console.log('---For Each 문---');
 alphabets.forEach(function (alpha, idx, arr) {
   // alpha: currentValue를 의미. 반복하고 있는 현재 요소
   // idx: currentValue의 인덱스(위치)
@@ -148,7 +154,7 @@ const arr4 = [1, 2, 3, 4, 5];
 //   return e * 2;
 // });
 // console.log(mapResult);
-
+console.log('---array.map---');
 const mapResult = arr4.map((e) => e * 2);
 console.log(mapResult);
 
@@ -160,6 +166,7 @@ console.log(mapResult);
 //   return e > 2;
 // });
 // console.log(filterResult);
+console.log('---array.filter---');
 const filterResult = arr4.filter((e) => e > 2);
 console.log(filterResult);
 
@@ -167,7 +174,7 @@ console.log(filterResult);
 //   return e > 2;
 // });
 // console.log(findResult);
-
+console.log('---array.find---');
 const findResult = arr4.find((e) => e > 2);
 console.log(findResult);
 
@@ -190,7 +197,7 @@ console.log(filterWords2);
 ////////////////////////////////
 // for in 반복문
 // 객체의 key를 반복할 수 있는 구문
-
+console.log('---for in 문: 객체 key 반복---');
 const me = { name: 'Sean', gender: 'f', hobby: 'movie' };
 for (let key in me) {
   console.log(key, me[key]);

@@ -1,4 +1,5 @@
-//pass by value
+// pass by value
+console.log('---pass by value---');
 // : 원시 타입(primitive type)은 값(value)이 복사되어 전달
 let num = 1;
 let num2 = num;
@@ -12,6 +13,7 @@ console.log(num === num2); //false
 //딕셔너리는 객체와 같은 의미를 지닌다.
 
 // pass by reference
+console.log('---pass by reference---');
 const obj = { one: 1, two: 2 };
 const obj2 = obj;
 console.log(obj, obj2); // { one: 1, two: 2 }
@@ -20,7 +22,7 @@ console.log(obj === obj2); // true
 obj.five = 5;
 console.log(obj, obj2); // { one: 1, two: 2, five: 5 }
 console.log(obj === obj2); // true
-// obj와 obj2는 현재 같은 데이터르 같고 참조값(address, 주소)도 같다
+// obj와 obj2는 현재 같은 데이터가 같고 참조값(address, 주소)도 같다
 
 //////
 const obj3 = { one: 1, two: 2 };
@@ -63,7 +65,7 @@ console.log(arr3 === arr4);
 // typeof [] -> object, typeof {} -> object
 // 이때의 객체는 광범위한 의미의 객체
 
-console.clear(); //위에 console기록을 삭제한다. 기록을 다시 보고 싶다면 주석 처리
+// console.clear(); //위에 console기록을 삭제한다. 기록을 다시 보고 싶다면 주석 처리
 
 // js 표준 내장 객체
 // 1. Date 객체: 시간, 날짜
@@ -110,7 +112,7 @@ if (today.getDay() === '0' || today.getDay === '6') {
 }
 console.log(today.getDay());
 
-console.clear();
+// console.clear();
 // Math 객체
 // 수학적인 상수와 함수
 
@@ -135,7 +137,7 @@ console.log(Math.floor(Math.random() * 10)); // 0 <= x < 10
 // 0 ~ 10
 console.log(Math.floor(Math.random() * 11)); // 0 <= x < 11
 
-console.clear();
+// console.clear();
 
 // 퀴즈
 // 1~100

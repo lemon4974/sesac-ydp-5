@@ -79,6 +79,8 @@ input.addEventListener('keydown', function (e) {
   }
 });
 
+console.clear;
+
 const todoForm = document.getElementById('todo-form');
 const todos = document.querySelector('.todos');
 
@@ -88,9 +90,9 @@ todoForm.addEventListener('submit', (e) => {
   // 폼 제출을 막음
 
   const todoInput = document.querySelector('input[name="todo"]');
-  //   console.log(todoInput);
-  //   console.dir(todoInput);
-  //   console.log(todoInput.value); // input에 입력된 값
+  console.log(todoInput);
+  // console.dir(todoInput);
+  // console.log(todoInput.value); // input에 입력된 값
 
   const newTodo = todoInput.value.trim();
   //   trim을 통해 다수의 spacebar 즉 '     '도 list에 추가가 안 되게 할 수 있음
