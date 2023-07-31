@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // document.querySelector('#result').value = result;
+
   reset.addEventListener('click', function (e) {
     v1Input.value = '';
     v2Input.value = '';

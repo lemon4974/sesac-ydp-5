@@ -1,0 +1,54 @@
+.header {
+  background-color: palegoldenrod;
+  height: 120px;
+}
+
+.main {
+  background-color: aqua;
+  display: flex;
+}
+
+.section {
+  background-color: cornflowerblue;
+  width: 80%;
+}
+
+.aside {
+  background-color: hotpink;
+  width: 20%;
+}
+
+.footer {
+  background-color: chartreuse;
+}
+
+@media (max-width: 480px) {
+  /* viewport width가 480px 이상일 때 적용 */
+  .header {
+    height: 60px;
+  }
+  .main {
+    flex-direction: column-reverse;
+  }
+  /* .aside {
+    display: none;
+  } */
+  .section {
+    width: 100%;
+  }
+}
+
+/* 이 모드는 CSS로 적용하는게 좋지만 js 로도 가능하다 */
+@media screen and (orientation: landscape) {
+  /* 가로모드 CSS */
+  body {
+    background-color: bisque;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  /* 세로모드 css */
+  body {
+    background-color: tomato;
+  }
+}
