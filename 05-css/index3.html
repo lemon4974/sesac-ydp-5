@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid System</title>
+
+    <!-- Bootstrap CDN (css) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./index3.css" />
+    <!-- Bootstrap CDN (js) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1>Grid System</h1>
+    <!-- 부트스트랩은 12칸 기준 -->
+    <div class="container bg-dark">
+      <div class="row">
+        <div class="col py-3 bg-success"></div>
+        <div class="col py-3 bg-warning"></div>
+        <div class="col py-3 bg-info"></div>
+        <div class="col py-3 bg-success"></div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-4 py-3 bg-success"></div>
+        <div class="col-4 py-3 bg-warning"></div>
+        <div class="col-4 py-3 bg-info"></div>
+        <div class="col-4 py-3 bg-info"></div>
+        <!-- 줄바꿈이 됨. -->
+      </div>
+
+      <main class="row g-4">
+        <!-- gutter: 여백 조절 -->
+        <section class="col-9 py-3 bg-success">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+          repellat, quos eligendi nisi quis magnam ullam eaque a quas illum,
+          quisquam corporis quaerat ducimus dolorum quod corrupti, beatae harum
+          animi.
+        </section>
+        <aside class="col-3 py-3 bg-warning"></aside>
+      </main>
+    </div>
+
+    <div class="row">
+      <div class="col py-3 bg-success"></div>
+      <div class="col-7 py-3 bg-warning"></div>
+      <div class="col py-3 bg-info"></div>
+      <!-- 2.5:7:2.5의 너비를 갖는다 -->
+    </div>
+
+    <div class="row bg-danger p-2">
+      <div class="col-8 bg-warning">
+        col-8
+        <div class="row">
+          <div class="col-6 py-3 bg-light">col-6</div>
+          <div class="col-6 py-3 bg-info">col-6</div>
+        </div>
+      </div>
+      <div class="col-4 bg-success">col-4</div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-9 bg-danger">col-sm-9</div>
+      <!-- sm 사이즈(576px) 이상일 때 9:3 비율(해당 비율 breakpoint에 나와있음) -->
+      <div class="col-sm-3 bg-primary">col-sm-3</div>
+    </div>
+
+    <br />
+
+    <div class="row">
+      <div class="col-sm bg-success">col-sm</div>
+      <div class="col-sm bg-warning">col-sm</div>
+      <div class="col-sm bg-success">col-sm</div>
+    </div>
+
+    <div class="row">
+      <div class="col-6 col-sm-9 bg-danger">col-sm-9</div>
+      <div class="col-6 col-sm-3 bg-primary">col-sm-3</div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-6 col-lg-9 bg-danger">col-lg-9</div>
+      <div class="col-6 col-lg-3 bg-primary">col-lg-3</div>
+    </div>
+
+    <div class="row">
+      <div class="col col-sm-9 col-md-6 col-lg-4 bg-info">col-sm-9</div>
+      <div class="col col-sm-3 col-md-6 col-lg-8 bg-primary">col-sm-3</div>
+    </div>
+  </body>
+</html>

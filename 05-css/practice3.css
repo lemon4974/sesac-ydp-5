@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: rgb(134, 195, 233);
+  height: 200px;
+
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  margin: 0px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aliceblue;
+}
+
+.header .menus {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.header .menus li {
+  margin: 0 20px;
+}
+
+@media (max-width: 768px) {
+  /* viewport width가 480px 이상일 때 적용 */
+  .container {
+    flex-direction: column;
+  }
+  /* .aside {
+      display: none;
+    } */
+  .section {
+    width: 100%;
+  }
+}
