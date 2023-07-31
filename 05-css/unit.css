@@ -1,0 +1,121 @@
+html {
+  font-size: 16px;
+}
+
+.box {
+  margin-bottom: 100px;
+}
+
+/* px 단위 */
+.px {
+  width: 500px;
+  height: 500px;
+  background-color: palegoldenrod;
+}
+
+/* % 단위
+    - 상위 요소의 상대적인 크기 
+*/
+
+.pct-parent {
+  width: 500px;
+  height: 500px;
+  background-color: plum;
+}
+
+.pct-child {
+  width: 50%;
+  height: 50%;
+  background-color: palegreen;
+}
+
+/* em
+    - font-size 속성값에 비례에서 결정되는 상대 단위
+    - 상위 요소 크기에 비례
+    - em 단위는 중첩~ 궁이 필요한 상황이 아니라면 자주 사용되지는 않음
+    - 3em을 상용하더라도 상황에 따라 그 크기가 다르기 때문.
+*/
+
+.em {
+  font-size: 2em;
+}
+/* 전 요소의 2배. 나나는 가가의 2배, 다다는 나나의 2배 */
+
+/* rem
+    - root em의 약자
+    - 최상위 요소(html) 크기에 비례
+    - 3rem이면 다 같은 크기! (중첩 영향을 받지 않음)
+ */
+.rem {
+  font-size: 2rem;
+}
+/* 나나도 가가의 2배, 다가도 가가의 2배 */
+
+.case1 {
+  font-size: 20px;
+}
+
+.case2 {
+  font-size: 10px;
+}
+
+.em-3 {
+  font-size: 3em;
+}
+
+/* vw, vh
+- viewport width(vw), viewport height(vh)
+-1vw: viewport width 1%
+-1vh: viewport height 1%
+
+    [퀴즈] 현재 웹 브라우저 사이즈 (1200px, 900px) 일 때,
+    5vw, 5vh의 값은?
+
+    1vw = 12px => 5vw = 60px
+    1vh = 9px => 5vh = 45px
+ */
+
+.vw {
+  height: 20vw;
+  width: 20vw;
+  background-color: coral;
+}
+
+.vh {
+  height: 20vh;
+  width: 20vh;
+  background-color: skyblue;
+
+  /* 편하게 확인하기 위해 */
+  /* margin-bottom: 1000px; */
+}
+
+/* css 변수
+    - 변수 이름: --로 시작
+ */
+:root {
+  /* 전역 변수 */
+  --color-success: rgb(49, 156, 49);
+  --color-error: rgb(237, 58, 58);
+  --color-white: rgb(250, 250, 250);
+}
+
+.btn {
+  /* 지역변수: 여기안에서만 유효한 변수 */
+  --size: 8px;
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  padding: var(--size);
+  /* 상하좌우에 8px씩 여백을 준 것. */
+  width: calc(var(--size) * 25);
+  /* calc 라는 함수에 감싸 주어야 한다. */
+}
+
+.btn.success {
+  background-color: var(--color-success);
+}
+.btn.error {
+  background-color: var(--color-error);
+}
