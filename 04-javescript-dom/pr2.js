@@ -9,22 +9,10 @@ let write = document.getElementById('write');
 write.addEventListener('click', function () {
   let name = nameInput.value;
   let value2 = mInput.value;
-  let h = hInput.value;
   let r = result.value;
+  //for 문
 
-  if (h === '+') {
-    result.value = value1 + value2;
-    console.log(`${result.value} = ${value1} + ${value2}`);
-  } else if (h === '-') {
-    result.value = value1 - value2;
-    console.log(`${result.value} = ${value1} - ${value2}`);
-  } else if (h === '*') {
-    result.value = value1 * value2;
-    console.log(`${result.value} = ${value1} * ${value2}`);
-  } else if (h === '/') {
-    result.value = value1 / value2;
-    console.log(`${result.value} = ${value1} / ${value2}`);
-  }
+  time;
 });
 
 reset.addEventListener('click', function () {
