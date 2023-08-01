@@ -1,6 +1,5 @@
 body {
-    padding-bottom: : 1000px;;
-
+  padding-bottom: 1000px;
 }
 
 .box {
@@ -11,10 +10,10 @@ body {
 }
 
 .my_center {
-    background-color: hotpink;
-    width: 300px
+  background-color: hotpink;
+  width: 300px;
 }
 
 .my_height {
-    background-color: greenyellow;
+  background-color: greenyellow;
 }

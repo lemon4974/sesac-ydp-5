@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Components</title>
+    <title>유틸리티</title>
     <!-- Bootstrap CDN (css) -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
@@ -22,7 +22,8 @@
   <body>
     <h1>Utilities</h1>
     <!-- 유틸리티: css 없이 빠르게 스타일을 바꿀 수 있는 것. -->
-    <!--border -->
+
+    <!--border 경계 -->
     <span class="box border rounded-circle border-primary">HI</span>
     <span class="box border-top">hi</span>
     <span class="box border-end">Hi</span>
@@ -30,16 +31,18 @@
     <span class="box border-start border-3 border-danger">hi  hi</span>
 
     <!-- 정렬 -->
-    <!--  -->
-    <div class="mx-auto p-2 my_center">
+    <div class="mx-auto p-3 my_center">
+<!-- grid에서 p 1~5 -->
+      <!-- p-2 :  -->
         Centered element
-      </div>
+    </div>
+
       <!-- width -->
-      <div class="w-25 p-3 my_width">Width 25%</div>
-    <div class="w-50 p-3 mb-2">Width 50%</div>
-    <div class="w-75 p-3">Width 75%</div>
-    <div class="w-100 p-3">Width 100%</div>
-    <div class="w-auto p-3">Width auto</div>
+    <div class="box w-25 p-3 my_width">Width 25%</div>
+    <div class="box w-50 p-3 mb-2">Width 50%</div>
+    <div class="box w-75 p-3">Width 75%</div>
+    <div class="box w-100 p-3">Width 100%</div>
+    <div class="box w-auto p-3">Width auto</div>
 
     <!-- height -->
     <div style="height: 100px;">
@@ -48,7 +51,8 @@
         <div class="h-75 d-inline-block my_height" style="width: 120px;">Height 75%</div>
         <div class="h-100 d-inline-block my_height" style="width: 120px;">Height 100%</div>
         <div class="h-auto d-inline-block my_height" style="width: 120px;">Height auto</div>
-      </div>
+    </div>
+
     <!-- shadow -->
     <div class="shadow-none p-3 mb-5 bg-body-tertiary rounded">No shadow</div>
     <div class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">Small shadow</div>

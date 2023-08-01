@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>CSS 단위</title>
-
+    <!-- CDN으로 연결한 CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -16,11 +16,13 @@
   <body>
     <h1>px</h1>
     <div class="box px"></div>
+    <!-- 기본적인 px(픽셀)단위가 있다 -->
 
     <h1>%</h1>
     <div class="box pct-parent">
-      <div class="pct-child"></div>
+      <div class="pct-child">child</div>
     </div>
+    <!--부모 요소를 기준으로 percentage 기준에 따라 크기 결정 -->
 
     <h1>em</h1>
     <div class="box">
@@ -57,6 +59,7 @@
 
     <h1>vh</h1>
     <div class="box vh"></div>
+    ㅅ
 
     <hr />
     <button class="btn success">Success</button>
