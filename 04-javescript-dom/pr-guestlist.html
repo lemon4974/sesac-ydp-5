@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>방명록 만들기</title>
+    <script defer src="./pr-guestlist.js"></script>
+    <style>
+      table * {
+        border: solid black;
+        padding: 5px 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>방명록입니다.</h1>
+    <span>작성자</span>
+    <input type="text" id="name" />
+    <br />
+    <span> 내용 </span>
+    <input type="text" id="message" size="100" />
+    <br />
+    <br />
+    <button type="submit" id="write">작성</button>
+    <br />
+    <br />
+    <table id="table" width="500">
+      <tr>
+        <th>번호</th>
+        <th>작성자</th>
+        <th>내용</th>
+        <th>작성일</th>
+      </tr>
+    </table>
+    <hr />
+  </body>
+</html>
