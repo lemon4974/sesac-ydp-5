@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습. 이미지 바꾸기</title>
+
+    <!-- TODO: jQuery CDN 추가 -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1>이미지 바꾸기</h1>
+
+    <img class="fruit" src="./q.jpg" alt="" width="300" height="200" />
+
+    <br />
+    <button class="btn apple" type="button" onclick="Apple();">사과</button>
+    <button class="btn bananas" type="button" onclick="Banana();">
+      바나나
+    </button>
+    <button class="btn grapes" type="button" onclick="Grape();">포도</button>
+    <button class="btn peaches" type="button" onclick="Peach();">복숭아</button>
+
+    <script>
+      // TODO: 조건을 만족하는 jquery 코드 작성
+
+      // console.log($('.btn')); // 유사 배열
+      // jQuery 는 js와 다르게 배열 형태더라도 그냥 바로 이벤트 적용 가능!!
+      function Apple() {
+        $('.fruit').attr('src', './apple.jpg');
+      }
+      function Banana() {
+        $('.fruit').attr('src', './bananas.jpg');
+      }
+      function Grape() {
+        $('.fruit').attr('src', './grapes.jpg');
+      }
+      function Peach() {
+        $('.fruit').attr('src', './peaches.jpg');
+      }
+    </script>
+  </body>
+</html>
