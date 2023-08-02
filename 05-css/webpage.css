@@ -1,0 +1,27 @@
+.footer {
+  height: 150px;
+  color: white;
+  background-color: black;
+  /* margin: 10px 0; */
+}
+
+.info {
+  margin: 0 10px;
+}
+
+ul {
+  font-size: 0.5em;
+  margin-top: 100px;
+  list-style: none;
+}
+
+li {
+  margin: 5px 10px;
+}
+
+.font {
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  /* background-color: ; */
+}

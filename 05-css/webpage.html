@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap CDN (css) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./webpage.css" />
+    <!-- Bootstrap CDN (js) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid font">
+          <img
+            src="https://i.namu.wiki/i/7odiKOobwcRn3h5h_Qj63poBcBpLas3nOiDi1T2MpFPACvELiPckUz1sand2gAyOx9hQMn3IQ9HgH_cAtFsokg.svg"
+            alt="나이키 로고"
+            width="80px"
+          />
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"
+                  >New Releases</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sale</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Men
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">신발</a></li>
+                  <li><a class="dropdown-item" href="#">의류</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">용품</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Women
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">신발</a></li>
+                  <li><a class="dropdown-item" href="#">의류</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">용품</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Upcoming</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <br />
+    <br />
+    <br />
+    <br />
+    <main>
+      <section>
+        <!-- <div class="container-fluid menu">
+          <div class="container menu-items">
+            <div
+              class="row"
+              style="
+                height: 100%;
+                display: flex;
+                align-items: center;
+                text-align: center;
+              "
+            >
+              <div class="col-12 col-sm-4"><a href="#">Hot</a></div>
+              <div class="col-12 col-sm-4"><a href="#">Feed</a></div>
+              <div class="col-12 col-sm-4"><a href="#">In stock</a></div>
+            </div>
+          </div>
+        </div> -->
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1337,c_limit/6c3eb848-5d0d-43a1-848e-23b13e6e3a31/nike-just-do-it.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h1>아웃도어 스타일링</h1>
+                  <p>뛰어난 기능성의 나이키 아웃도어 룩으로 맞이하는 새로운 가을.</p>
+                 <p>매주 공개되는 스타일링 미션에 참여하여 특별한 기프트도 받아 보세요.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1337,c_limit/67c7f336-5b77-4741-87aa-37b01ceee49b/nike-just-do-it.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h1>클래식의 재해석</h1>
+                  <p>어떤 스타일과도 조화로운 멋을 선사하는 나이키 코르테즈와 함께 나만의 개성을 표현해 보세요.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1337,c_limit/3de85c14-718e-4aa1-8830-8c49005454f0/nike-just-do-it.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h1>당신의 모든 움직임을 위해</h1>
+                  <p>오늘도, 내일도 언제든 운동을 나설 수 있도록.</p>
+                  <p>모든 발걸음에 힘을 실어주는 나이키 모티바를 만나보세요.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+      
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <!-- card list -->
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <div class="card">
+            <img
+              src="https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/18b47dc5-bf90-4273-81c9-921f9ab7d7ed/aaf88-x-billie-fire-red-and-white-dz6763-101-%EC%B6%9C%EC%8B%9C%EC%9D%BC.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">AAF88 x Billie</h5>
+              <p class="card-text">Fire Red and White</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img
+              src="https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/ea7b8d93-0ec3-4497-b578-569e2b561a22/%EC%97%90%EC%96%B4-%EC%A1%B0%EB%8D%98-1-%ED%95%98%EC%9D%B4-university-blue-dz5485-400-%EC%B6%9C%EC%8B%9C%EC%9D%BC.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">에어 조던 1 하이</h5>
+              <p class="card-text">University Blue</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img
+              src="https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/214d7d9f-7fd5-4864-a884-9af6ad9cd221/%EC%97%90%EC%96%B4-%EC%A1%B0%EB%8D%98-1-%EB%A1%9C%EC%9A%B0-black-cement-cz0790-001-%EC%B6%9C%EC%8B%9C%EC%9D%BC.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">에어 조던 1 로우</h5>
+              <p class="card-text">Black Cement</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img
+              src="https://static.nike.com/a/images/w_960,c_limit,f_auto/5cbd728b-c794-44b6-b6d9-99a65737fb72/street-snkrs-jongro.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Street SNKRS</h5>
+              <p class="card-text">Jongro</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside></aside>
+    </main>
+    <br />
+    <br />
+    <br />
+    <br />
+    <footer class="footer">
+      <div class="info">
+        <ul>
+          <li>새로운 소식</li>
+          <li>멤버가입</li>
+          <li>매장안내</li>
+          <li>나이키 저널</li>
+        </ul>
+      </div>
+      <p class="info"></p>
+      <p>
+        2023 Nike, Inc. All Rights Reserved
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </p>
+    </footer>
+  </body>
+</html>
