@@ -16,7 +16,7 @@
   <body>
     <h1>이미지 바꾸기</h1>
 
-    <img class="fruit" src="./q.jpg" alt="" width="300" height="200" />
+    <img class="fruit" src="./img/q.jpg" alt="" width="300" height="200" />
 
     <br />
     <button class="btn apple" type="button" onclick="Apple();">사과</button>
@@ -32,16 +32,16 @@
       // console.log($('.btn')); // 유사 배열
       // jQuery 는 js와 다르게 배열 형태더라도 그냥 바로 이벤트 적용 가능!!
       function Apple() {
-        $('.fruit').attr('src', './apple.jpg');
+        $('.fruit').attr('src', './img/apple.jpg');
       }
       function Banana() {
-        $('.fruit').attr('src', './bananas.jpg');
+        $('.fruit').attr('src', './img/bananas.jpg');
       }
       function Grape() {
-        $('.fruit').attr('src', './grapes.jpg');
+        $('.fruit').attr('src', './img/grapes.jpg');
       }
       function Peach() {
-        $('.fruit').attr('src', './peaches.jpg');
+        $('.fruit').attr('src', './img/peaches.jpg');
       }
     </script>
   </body>

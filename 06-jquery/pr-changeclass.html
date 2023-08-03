@@ -42,17 +42,15 @@
         // .bg-red 클래스 있다면, .bg-red 제거, .bg-orange 추가
         // .bg-orange 클래스 있다면, .bg-orange 제거, .bg-yellow 추가
         // .bg-yellow 클래스 있다면, .bg-yellow 제거, .bg-red 추가
-        if ($('div').hasClass.contains('bg-red')) {
-          div.removeClass('bg-red');
-          div.addClass('bg-orange');
-        }
-        if ($('div').hasClass.contains('bg-orange')) {
-          div.removeClass('bg-orange');
-          div.addClass('bg-yellow');
-        }
-        if ($('div').hasClass.contains('bg-yellow')) {
-          div.removeClass('bg-yellow');
-          div.addClass('bg-red');
+        if ($('.box').hasClass('bg-red')) {
+          $('div').removeClass('bg-red');
+          $('div').addClass('bg-orange');
+        } else if ($('.box').hasClass('bg-orange')) {
+          $('div').removeClass('bg-orange');
+          $('div').addClass('bg-yellow');
+        } else if ($('.box').hasClass('bg-yellow')) {
+          $('div').removeClass('bg-yellow');
+          $('div').addClass('bg-red');
         }
       }
     </script>

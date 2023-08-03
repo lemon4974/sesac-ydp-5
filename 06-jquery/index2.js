@@ -24,7 +24,7 @@ function setValue() {
 function changeCssJS() {
   const span = document.querySelector('span');
   span.style = 'font-size: 20px; color: red';
-  //   안녕 1만 red 로 변경
+  //   '안녕 1'만 red 로 변경
 }
 
 function changeCssJquery() {
@@ -245,6 +245,9 @@ function hasClass() {
   const hi = document.querySelector('#hi');
   hi.classList.contains('fs-50');
   console.log(hi.classList.contains('fs-50'));
+
+  // $('.box').hasClass('bg-red')
+  // 예시 필기를 왜 안 한거야.
 }
 
 function toggleClass() {
