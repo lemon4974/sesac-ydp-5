@@ -88,11 +88,11 @@ function appendJS() {
   // 1. colors 클래스 갖는 요소 선택하고
   const colors = document.querySelector('.colors');
   // 2. li 태그 요소를 생성한 후
-  const p = document.createElement('li');
+  const li = document.createElement('li');
   // 3. li 태그의 텍스트로 '마지막 자식으로 추가된 js' 추가
-  p.innerText = '마지막 자식으로 추가된 js';
+  li.innerText = '마지막 자식으로 추가된 js';
   // 4. color 클래스를 갖는 요소에 "맨 마지막 자식"으로 li 요소 추가
-  colors.append(p);
+  colors.append(li);
   console.log(document.querySelector('.colors'));
 }
 
@@ -110,9 +110,9 @@ function prependJS() {
   // 힌트: https://developer.mozilla.org/en-US/docs/Web/API/Element/prepend
 
   const colors = document.querySelector('.colors');
-  const p = document.createElement('li');
-  p.innerText = '첫 자식으로 추가된 js';
-  colors.prepend(p);
+  const li = document.createElement('li');
+  li.innerText = '첫 자식으로 추가된 js';
+  colors.prepend(li);
 }
 
 function prependJquery() {
