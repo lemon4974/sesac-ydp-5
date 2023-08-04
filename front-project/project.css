@@ -1,13 +1,42 @@
+body {
+  position: relative;
+  margin: 0%;
+  /* background-color: bisque; */
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
 .header {
   width: 100%;
-  height: 10%;
+  height: 15%;
   background-color: azure;
+  position: fixed;
+  top: 0;
+  right: 0;
 }
 
 .sky {
-  width: 1000px;
+  width: 100%;
+  height: 40%;
+  border-radius: 50%;
   background-color: aliceblue;
+
+  position: fixed;
+  top: 1000;
+  right: 0;
+  z-index: 1;
 }
 
 .desert {
+  width: 100%;
+  height: 100px;
+  background-color: brown;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
 }

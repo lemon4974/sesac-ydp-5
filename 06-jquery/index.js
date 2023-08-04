@@ -8,7 +8,7 @@ console.log($('#div1'));
 function submitJs() {
   // 요소 선택
   const div1 = document.getElementById('div1');
-  //  const div1 = document.querySelector('#div1');
+  // const div1 = document.querySelector('#div1');
 
   //div 내용을 변경
   div1.innerText = '반갑습니다!';
