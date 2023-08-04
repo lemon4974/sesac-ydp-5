@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js_dom_quiz. 4번</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>퀴즈4. HTML 요소의 스타일 변경하기</h1>
+    <img src="./image/quiz4.png" alt="문제" width="800" />
+    <!-- 
+      문제
+      - [ ] div.container 요소에 노래 가사가 쓰여 있습니다.
+      - [ ] span 태그를 모두 선택하여 글씨 색상을 blueviolet으로 변경하고 글씨를 굵게 변경해주세요.
+      - [ ] 노래 제목과 가사를 포함하는 div.container 요소에 배경 색상(#eee)을 주시고, 가운데 정렬해 주세요.
+      - [ ] [경고] html 코드 변경 없이 js 코드로만 변경해야 합니다. script 태그의 내부 코드를 추가해주세요.
+    -->
+
+    <!-- WARNING: HTML 코드 변경 금지!! -->
+    <hr />
+    <div class="container">
+      <h2>시간의 바깥 - IU</h2>
+      <div>
+        서로를 <span>감</span>아 포개어진 <span>삶</span><br />
+        그들을 <span>가</span>만 내려보는 <span>달</span><br />
+        여전히 <span>많</span>아 하고 싶은 <span>말</span><br />
+        우리 좀 <span>봐</span> 꼭 하나 같<span>아</span><br />
+      </div>
+    </div>
+    <script>
+      // TODO: 문제 조건을 만족하는 js 코드 작성
+      const container = document.querySelector('.container');
+      container.style.backgroundColor = '#eee';
+
+      document.querySelector('div').style.textAlign = 'center';
+      // document.querySelector('div').style.display = 'flex';
+
+      const span = document.querySelectorAll('span');
+      for (let s of span) {
+        s.style.color = 'blueviolet';
+        s.style.fontWeight = '1000';
+      }
+    </script>
+  </body>
+</html>

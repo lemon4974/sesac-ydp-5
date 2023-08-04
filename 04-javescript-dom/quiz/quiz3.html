@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js_dom_quiz. 3번</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>퀴즈3. HTML 요소의 속성 변경하기</h1>
+    <img src="./image/quiz3.png" alt="문제" width="800" />
+    <!-- 
+      문제
+      - [ ] 드라마 포스터가 잘못 출력되고 있습니다. img.poster 태그의 속성들을 변화시켜 변경 후 이미지와 동일하도록 속성을 적절히 변경해주세요.
+      - [ ] src 속성 값을 변경시켜 "이상한 변호사 우영우" 포스터가 보이도록 변경해주세요. (image 폴더 내 이미지 파일명 확인)
+      - [ ] alt 속성 값을 "이상한 변호사 우영우"로 변경해주세요.
+      - [ ] 포스터의 크기가 너무 작습니다. width 속성 값을 200으로 변경해주세요.
+      - [ ] [경고] html 코드 변경 없이 js 코드로만 변경해야 합니다. script 태그의 내부 코드를 추가해주세요.
+    -->
+
+    <!-- WARNING: HTML 코드 변경 금지!! -->
+    <hr />
+    <div>
+      <img
+        class="poster"
+        src="./image/bigmouse.jpeg"
+        alt="빅마우스"
+        width="100"
+      />
+      <ul>
+        <li>이상한 변호사 우영우</li>
+        <li>드라마</li>
+        <li>15세 이상</li>
+      </ul>
+    </div>
+
+    <script>
+      // TODO: 문제 조건을 만족하는 js 코드 작성
+      const poster = document.querySelector('.poster');
+      poster.setAttribute('src', './image/wooyoungwoo.jpg');
+
+      poster.setAttribute('width', '200');
+    </script>
+  </body>
+</html>

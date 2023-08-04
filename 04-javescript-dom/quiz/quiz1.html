@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js_dom_quiz 1번</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+
+      code {
+        display: inline-block;
+        margin: 1px 0;
+        padding: 2px;
+        border-radius: 3px;
+        background-color: #ededed;
+        font-family: 'Noto Sans Mono', monospace;
+        font-weight: 500;
+      }
+
+      p {
+        padding: 10px 20px;
+        background-color: rgb(248, 255, 230);
+        border-radius: 10px;
+      }
+
+      li {
+        margin: 4px 0;
+        font-size: 18px;
+      }
+
+      li.check {
+        color: red;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Javascript DOM Quiz</h1>
+    <!-- 
+        TODO: quiz1.html 파일을 실행하고, 정답이라고 생각하는 li 태그의 클래스 속성값으로 "check"를 넣어주세요. 
+        li 태그에 check 클래스 삽입시 빨간색으로 선택되도록 css 설정했습니다.
+    -->
+
+    <h2>Q1. HTML DOM 트리에 대한 설명으로 옳지 <u>않은</u> 것은?</h2>
+    <ol>
+      <li>브라우저에 의해 만들어진다.</li>
+      <li>HTML 문서가 로드되면 만들어 진다.</li>
+      <li>
+        HTML 포함 관계에 의해 DOM 객체들 사이에 부모 자식 관계가 형성된다.
+      </li>
+      <li class="check">
+        DOM 트리에서 id 값을 이용해 DOM 객체를 찾는 기능은
+        <code>window.getElementById()</code>이다.
+      </li>
+    </ol>
+    <hr />
+
+    <h2>
+      Q2. 아래 코드는 <code>div</code> 태그를 찾는 자바스크립트 코드이다.
+      <code>div</code> 태그의 스타일을 제어하기 위한 코드로 <u>틀린</u> 것은?
+    </h2>
+    <div><code>let obj = document.querySelector('div');</code></div>
+    <ol>
+      <li><code>obj.style.color = 'blue';</code></li>
+      <li class="check"><code>obj.style.backgroundcolor = 'yellow';</code></li>
+      <li><code>obj.style.margin = '10px';</code></li>
+      <li><code>obj.style.padding = '10px';</code></li>
+    </ol>
+    <hr />
+
+    <h2>
+      Q3. DOM은 개발자가 웹 페이지에 접근하여 처리할 수 있도록 브라우저가
+      제공하는 기능의 집합이다. DOM은 무엇의 약자인가?
+    </h2>
+    <ol>
+      <li class="check">Document Object Model</li>
+      <li>Document Objectification Method</li>
+      <li>Development Of Markup</li>
+      <li>Development Of Methods</li>
+    </ol>
+    <hr />
+
+    <h2>Q4. 웹 페이지의 내용을 'HELLO'로 바꾸는 코드로 올바른 것은?</h2>
+    <ol>
+      <li><code>document.innerHTML('HELLO');</code></li>
+      <li><code>document.body.html = 'HELLO';</code></li>
+      <li><code>document.body.html('HELLO');</code></li>
+      <li class="check"><code>document.body.innerHTML = 'HELLO';</code></li>
+      <li><code>document.innerHTML = 'HELLO';</code></li>
+    </ol>
+    <hr />
+  </body>
+</html>

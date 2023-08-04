@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js_dom_quiz. 2번</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>퀴즈2. HTML 요소 내용 변경하기</h1>
+    <img src="./image/quiz2.png" alt="문제" width="800" />
+    <!-- 
+      문제
+      - [ ] span 요소를 선택하여 해당 요소의 내용을 '맛있다'에서 '맛없다'로 변경해주세요.
+      - [ ] span 태그의 글씨 색상과 폰트 굵기를 변경해주세요.
+      - [ ] [경고] html 코드 변경 없이 js 코드로만 변경해야 합니다. script 태그의 내부 코드를 추가해주세요.
+    -->
+
+    <!-- WARNING: HTML 코드 변경 금지!! -->
+    <hr />
+    <div>민트 초코는 <span>맛있다 >_<</span></div>
+
+    <script>
+      // TODO: 문제 조건을 만족하는 js 코드 작성
+      const span = document.querySelector('span');
+      span.style.fontSize = '30px';
+      span.style.color = 'red';
+      span.innerHTML = '<b>맛없다--;;</b>';
+
+      //     for (let li of list) {
+      // li.style.backgroundColor = 'purple';
+      // li.style.fontSize = '20px';
+      // li.style.color = 'yellow';
+      // }
+    </script>
+  </body>
+</html>
