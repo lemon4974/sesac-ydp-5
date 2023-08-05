@@ -87,8 +87,7 @@
 
     <script>
       // TODO: 문제 조건을 만족하는 js 코드 작성
-      // (참고) article-box, img-box, text-center 클래스에 대한 스타일시트는 haed > style 태그에 이미 정의되어 있습니다.
-      const textcenter = document.querySelector('.text-center');
+      // (참고) article-box, img-box, text-center 클래스에 대한 스타일시트는 head > style 태그에 이미 정의되어 있습니다.
 
       const section = document.querySelector('section');
       const icecreams = [
@@ -102,7 +101,32 @@
         '뮤! 넌 내거야',
         '오레오 쿠키 앤 크림',
       ];
-      for (i = 0; i < 9; i++) {}
+
+      //30분 .
+      for (i = 0; i < 9; i++) {
+        // article을 section의 자식 요소로 추가
+        const article = document.createElement('article');
+        // article에 클래스 추가
+        article.classList.add('article-box');
+        // append
+        section.append(article);
+        // console.log(article);
+
+        // article의 자식 요소 생성 img h3 div
+        const img = document.createElement('img');
+        const h3 = document.createElement('h3');
+        const div = document.createElement('div');
+        // img 속성 지정()img 삽입
+        img.setAttribute('src', `./image/icecream${i + 1}.png`);
+        // h3 text center 클래스 속성
+        h3.innerHTML = `Top ${i + 1}`;
+        // icecreams의 문구 지정
+        div.innerHTML = icecreams[i];
+
+        article.append(img);
+        article.append(h3);
+        article.append(div);
+      }
       // console.log(icecreams[3]);
     </script>
   </body>

@@ -49,6 +49,19 @@
       // - [ ] 색상을 나타내는 방식에는 헥스 코드(#RRGGBB)와 10진 코드 (R,G,B) 두 가지 방식이 있습니다.
       //    - 이 프로젝트에서는 10진 코드(r, g, b) 방식을 사용합니다.
       //    - rgb(r, g, b)에서 red, green, blue 숫자 범위는 0이상 255이하 입니다. 즉, 각 색상마다 0 ~ 255 사이의 랜덤한 값을 생성해야 합니다.
+      const button = document.querySelector('button');
+      const h2 = document.querySelector('h2');
+
+      button.addEventListener('click', function () {
+        const r = Math.random() * 256;
+        const g = Math.random() * 256;
+        const b = Math.random() * 256;
+        document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
+        const x = Math.random() * 256;
+        const y = Math.random() * 256;
+        const z = Math.random() * 256;
+        h2.style.color = `rgb(${x},${y},${z})`;
+      });
     </script>
   </body>
 </html>

@@ -67,21 +67,11 @@
     <script>
       // TODO: 문제 조건을 만족하는 js 코드 작성
       // (참고) done 클래스와 todo 클래스에 대한 스타일시트는 head > style 태그에 이미 정의되어 있습니다.
-      // h1.classList.add('add-h1');
-      // h1.classList.remove('add-h1');
 
-      const todo = document.querySelector('.todo');
-      todo.classList.remove('.done');
-      todo.classList.add('.todo');
-
-      // for (let todo of todos) {
-      //   todo.classList.remove('.todo');
-      //   todo.classList.add('.done');
-      // }
-
-      const done = document.querySelector('.done');
-      for (let done of dones) {
-        done.classList.remove('.todo');
+      let lis = document.querySelectorAll('li');
+      for (let li of lis) {
+        li.classList.toggle('todo');
+        li.classList.toggle('done');
       }
     </script>
   </body>
