@@ -22,6 +22,9 @@
   <body>
     <h1>Grid System</h1>
     <!-- 부트스트랩은 12칸 기준 -->
+
+    <br />
+
     <div class="container bg-dark">
       <div class="row">
         <!-- py는 높이 -->
@@ -42,15 +45,29 @@
       </div>
       <br />
 
+      <div class="row">
+        <div class="col-7 py-3 bg-success"></div>
+        <div class="col-3 py-3 bg-warning"></div>
+        <div class="col-4 py-3 bg-info"></div>
+        <div class="col-4 py-3 bg-info"></div>
+        <!-- 부트스트랩의 grid 기준은 12 칸이기 때문에 col-x 에서 x 의 합이 12를 넘기면 줄바꿈이 된다 -->
+      </div>
+      <br />
+
       <main class="row g-4">
         <!-- gutter: 여백 조절 -->
         <section class="col-9 py-3 bg-success">
           Lorem ipsum dolor ㅣLorem ipsum dolor sit amet consectetur adipisicing
-          elit. Tenetur doloribus dolores corporis?
+          elit. Tenetur doloribus dolores corporis? Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Voluptatum saepe, explicabo ad cumque
+          aliquid quasi molestiae dolorem, commodi quaerat officiis vero
+          voluptas nemo, quae nostrum vitae nulla voluptatibus dolores laborum?
         </section>
         <aside class="col-3 py-3 bg-warning"></aside>
       </main>
     </div>
+    <br /><br /><br />
+    <!-- <h2>여기까지 한 container</h2> -->
     <br />
 
     <div class="row">
@@ -61,7 +78,7 @@
     </div>
     <br />
 
-    <div class="row bg-danger p-2">
+    <div class="row p-2">
       <div class="col-8 bg-warning">
         col-8
         <div class="row">
@@ -72,6 +89,7 @@
       </div>
       <div class="col-4 bg-success">col-4</div>
     </div>
+    <br />
 
     <div class="row">
       <div class="col-sm-9 bg-danger">col-sm-9</div>
@@ -100,7 +118,7 @@
       <div class="col-6 col-lg-3 bg-primary">col-lg-3</div>
       <!-- 위와 같지만 lg 라는 다른 기준의 breakpoint -->
     </div>
-
+    <br />
     <div class="row">
       <div class="col col-sm-9 col-md-6 col-lg-4 bg-info">col-sm-9</div>
       <div class="col col-sm-3 col-md-6 col-lg-8 bg-primary">col-sm-3</div>

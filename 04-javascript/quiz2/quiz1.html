@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js_quiz2. 1번</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+
+      code {
+        display: inline-block;
+        margin: 1px 0;
+        padding: 2px;
+        border-radius: 3px;
+        background-color: #ededed;
+        font-family: 'Noto Sans Mono', monospace;
+        font-weight: 500;
+      }
+
+      p {
+        padding: 10px 20px;
+        background-color: rgb(248, 255, 230);
+        border-radius: 10px;
+      }
+
+      li {
+        margin: 4px 0;
+        font-size: 18px;
+      }
+
+      li.check {
+        color: red;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Javascript Quiz</h1>
+    <!-- 
+        TODO: quiz1.html 파일을 실행하고, 정답이라고 생각하는 li 태그의 클래스 속성값으로 "check"를 넣어주세요. 
+        li 태그에 check 클래스 삽입시 빨간색으로 선택되도록 css 설정했습니다.
+    -->
+
+    <h2>Q1. <code>Boolean(10 > 9)</code> 코드가 반환하는 값은?</h2>
+    <ol>
+      <li class="check"><code>true</code></li>
+      <li><code>false</code></li>
+      <li><code>NaN</code></li>
+    </ol>
+    <hr />
+
+    <h2>Q2. 다음 중 결과가 다른 하나는?</h2>
+    <ol>
+      <li><code>!true</code></li>
+      <!-- false -->
+      <li><code>true && false</code></li>
+      <!-- false -->
+      <li class="check"><code>true || false</code></li>
+      <!-- true -->
+      <li><code>!!false && (3 > 5)</code></li>
+      <!-- false &&  -->
+    </ol>
+    <hr />
+
+    <h2>Q3. 다음 중 결과가 다른 하나는?</h2>
+    <ol>
+      <li><code>3 !== '3'</code></li>
+      <li><code>(8 / '2') !== 4</code></li>
+      <li><code>0 === false</code></li>
+      <li><code>('1' + 2) === 12</code></li>
+    </ol>
+    <hr />
+
+    <h2>Q4. 다음 중 if 문을 올바르게 작성한 것은 무엇인가?</h2>
+    <ol>
+      <li><code>if (x == 5)</code></li>
+      <li><code>if (x == 5):</code></li>
+      <li><code>if (x == 5) then</code></li>
+      <li><code>if x = 5</code></li>
+    </ol>
+    <hr />
+
+    <h2>
+      Q5. 자바스크립트에서 "i가 7이 아닐 때"를 의미하는 코드로 올바른 것은?
+    </h2>
+    <ol>
+      <li><code>if (i <> 7)</code></li>
+      <li><code>if (i !== 7)</code></li>
+      <li><code>if (i =! 7) then</code></li>
+      <li><code>if i != 7:</code></li>
+    </ol>
+    <hr />
+
+    <!-- TODO: 문제를 다 풀었으면 Slack DM 보내주세요. 정답 파일 전송해드리겠습니다 :) -->
+  </body>
+</html>

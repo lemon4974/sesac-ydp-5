@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js_quiz3. 3번</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      code {
+        display: inline-block;
+        margin: 1px 0;
+        padding: 2px;
+        border-radius: 3px;
+        background-color: #ededed;
+        font-family: 'Noto Sans Mono', monospace;
+        font-weight: 500;
+      }
+
+      p {
+        padding: 10px 20px;
+        background-color: rgb(248, 255, 230);
+        border-radius: 10px;
+      }
+
+      b {
+        color: #263cff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>퀴즈3. 오늘의 요일은?</h1>
+    <div>
+      어제 푼 문제(js_quiz2/quiz4.html)를 다른 방식으로 풀어볼까요? if
+      조건문으로 작성된 코드를 switch-case문으로 변경해주세요. 아래 조건은
+      어제와 동일합니다.
+    </div>
+    <ul>
+      <li>
+        <code>whatDay()</code>함수는
+        <b>매개변수 값(인자 값)에 따라 요일을 출력</b>하는 함수이다.
+      </li>
+      <li>
+        <code>whatDay()</code>함수는 <code>day</code>를 매개변수로 갖는다.
+      </li>
+      <li>
+        매개변수
+        <b
+          ><code>day</code>값이 숫자 1이라면 "월", 2라면 "화", 3이라면 "수" ...
+          7이라면 "일"을 반환</b
+        >한다.
+      </li>
+      <li>
+        매개변수
+        <b
+          ><code>day</code>에 숫자 1~7 이외의 값이 들어오면, <code>null</code>을
+          반환</b
+        >한다.
+      </li>
+      <li>
+        함수 호출 예시:
+        <img src="./image/quiz3.png" alt="보기" />
+      </li>
+    </ul>
+    <p>
+      switch, case, default, break 키워드에 대해 잘 기억하고 계신가요? 각각
+      무엇을 의미하는지 확인해주세요.
+      <a
+        target="_blank"
+        href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/switch#%EB%AC%B8%EB%B2%95"
+        >MDN 사이드 이동</a
+      ><br /><br />
+    </p>
+
+    <script>
+      function whatDay(day) {
+        // TODO: if 조건문으로 작성한 코드를 switch-case 문으로 변경해주세요.
+        if (day === 1) {
+          return '월';
+        } else if (day === 2) {
+          return '화';
+        } else if (day === 3) {
+          return '수';
+        } else if (day === 4) {
+          return '목';
+        } else if (day === 5) {
+          return '금';
+        } else if (day === 6) {
+          return '토';
+        } else if (day === 7) {
+          return '일';
+        } else {
+          return null;
+        }
+      }
+
+      // TODO: 해당 html 파일을 실행한 브라우저 콘솔창에서 whatDay 함수를 호출해주세요!
+      // whatDay(3);
+      // whatDay(7);
+      // whatDay(0);
+      // whatDay(10);
+      // whatDay('5');
+    </script>
+  </body>
+</html>

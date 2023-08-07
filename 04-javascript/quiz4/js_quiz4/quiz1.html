@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js_quiz4. 1번</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+
+      code {
+        display: inline-block;
+        margin: 1px 0;
+        padding: 2px;
+        border-radius: 3px;
+        background-color: #ededed;
+        font-family: 'Noto Sans Mono', monospace;
+        font-weight: 500;
+      }
+
+      p {
+        padding: 10px 20px;
+        background-color: rgb(248, 255, 230);
+        border-radius: 10px;
+      }
+
+      li {
+        margin: 4px 0;
+        font-size: 18px;
+      }
+
+      li.check {
+        color: red;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Javascript Quiz</h1>
+    <!-- 
+        TODO: quiz1.html 파일을 실행하고, 정답이라고 생각하는 li 태그의 클래스 속성값으로 "check"를 넣어주세요. 
+        li 태그에 check 클래스 삽입시 빨간색으로 선택되도록 css 설정했습니다.
+    -->
+
+    <h2>Q1. 다음 중 배열을 올바르게 생성한 것은?</h2>
+    <ol>
+      <li><code>var fruits = 'apple', 'banana', 'orange';</code></li>
+      <li><code>var fruits = {'apple', 'banana', 'orange'};</code></li>
+      <li><code>var fruits = ('apple', 'banana', 'orange');</code></li>
+      <li><code>var fruits = ['apple', 'banana', 'orange'];</code></li>
+    </ol>
+    <hr />
+
+    <h2>
+      Q2. 다음 코드와 같이 person 객체를 생성했다. 다음 중 에러가 발생하는
+      코드는?
+    </h2>
+    <img src="./image/quiz1-4.png" alt="보기" />
+    <ol>
+      <li><code>console.log(person[age]);</code></li>
+      <li><code>console.log(person.friends[3]);</code></li>
+      <li><code>console.log(person.gender);</code></li>
+      <li><code>console.log(person[age]);</code></li>
+    </ol>
+    <hr />
+
+    <h2>Q3. &pi;값을 반올림하는 코드로 올바른 것은?</h2>
+    <ol>
+      <li><code>Math.round(Math.PI)</code></li>
+      <li><code>round(Math.PI)</code></li>
+      <li><code>Math.rnd(Math.PI)</code></li>
+      <li><code>rnd(Math.PI)</code></li>
+    </ol>
+    <hr />
+
+    <h2>Q4. <code>a</code>와 <code>b</code> 중에서 더 큰 값을 찾는 코드는?</h2>
+    <ol>
+      <li><code>Math.top(a, b)</code></li>
+      <li><code>Math.big(a, b)</code></li>
+      <li><code>Math.max(a, b)</code></li>
+      <li><code>Math.larger(a, b)</code></li>
+    </ol>
+    <hr />
+
+    <h2>Q5. 다음 코드의 결과는?</h2>
+    <img src="./image/quiz1-1.png" alt="보기" />
+    <ol>
+      <li>8</li>
+      <li>9</li>
+      <li>20</li>
+      <li>29</li>
+    </ol>
+    <hr />
+
+    <h2>
+      Q6. Date 객체를 이용해 <code>someday</code>변수에 저장된 날짜로 올바른
+      것은?
+    </h2>
+    <img src="./image/quiz1-2.png" alt="보기" />
+    <ol>
+      <li><code>Thu Aug 04 1988 05:10:00</code></li>
+      <li><code>Thu Aug 08 1988 05:10:00</code></li>
+      <li><code>Thu Sep 04 1988 05:10:00</code></li>
+      <li><code>Thu Sep 08 1988 05:10:00</code></li>
+    </ol>
+    <hr />
+
+    <h2>
+      Q7. 다음 중 1 이상 50 이하의 숫자값을 반환하는 것을 <u>모두</u> 고르시오.
+    </h2>
+    <ol>
+      <li><code>Math.floor(Math.random() * 50)</code></li>
+      <li><code>Math.floor(Math.random() * 50) + 1</code></li>
+      <li><code>Math.ceil(Math.random() * 50)</code></li>
+      <li><code>Math.ceil(Math.random() * 50) + 1</code></li>
+    </ol>
+    <hr />
+
+    <h2>Q8. 다음 중 0 이상 10 이하의 숫자값을 반환하는 것은?</h2>
+    <ol>
+      <li><code>Math.floor(Math.random() * 9) + 1</code></li>
+      <li><code>Math.floor(Math.random() * 10)</code></li>
+      <li><code>Math.floor(Math.random() * 10) + 1</code></li>
+      <li><code>Math.floor(Math.random() * 11)</code></li>
+    </ol>
+    <hr />
+
+    <h2>
+      Q9. 다음 중 document 객체에서 HTML 요소를 선택하는 메소드가 아닌 것을
+      <u>모두</u> 고르시오.
+    </h2>
+    <ol>
+      <li><code>querySelector()</code></li>
+      <li><code>querySelectorsAll()</code></li>
+      <li><code>getElementsById()</code></li>
+      <li><code>getElementsByClassName()</code></li>
+      <li><code>getElementsByTagName()</code></li>
+    </ol>
+    <hr />
+  </body>
+</html>

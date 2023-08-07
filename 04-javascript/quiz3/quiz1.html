@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js_quiz3. 1번</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+
+      code {
+        display: inline-block;
+        margin: 1px 0;
+        padding: 2px;
+        border-radius: 3px;
+        background-color: #ededed;
+        font-family: 'Noto Sans Mono', monospace;
+        font-weight: 500;
+      }
+
+      p {
+        padding: 10px 20px;
+        background-color: rgb(248, 255, 230);
+        border-radius: 10px;
+      }
+
+      li {
+        margin: 4px 0;
+        font-size: 18px;
+      }
+
+      li.check {
+        color: red;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Javascript Quiz</h1>
+    <!-- 
+        TODO: quiz1.html 파일을 실행하고, 정답이라고 생각하는 li 태그의 클래스 속성값으로 "check"를 넣어주세요. 
+        li 태그에 check 클래스 삽입시 빨간색으로 선택되도록 css 설정했습니다.
+    -->
+
+    <h2>
+      Q. 다음 중 삼항 연산자를 이용해 gender가 0이면 '남자', 0이 아니면 '여자'를
+      출력하는 코드로 옳은 것은? (gender 변수는 이미 선언되어 있다고 가정)
+    </h2>
+    <ol>
+      <li><code>console.log(gender == 0 : '남자' ? '여자');</code></li>
+      <li><code>console.log(gender == 0 ? '남자' : '여자');</code></li>
+      <li><code>console.log(gender == 0 : '여자' ? '남자');</code></li>
+      <li><code>console.log(gender == 0 ? '여자' : '남자');</code></li>
+    </ol>
+    <hr />
+
+    <h2>Q. 다음 코드 실행 결과는?</h2>
+    <img src="./image/quiz1-1.png" alt="보기" />
+    <ol>
+      <li><code>b</code></li>
+      <li>
+        <code>a<br />b</code>
+      </li>
+      <li>
+        <code>b<br />c</code>
+      </li>
+      <li>
+        <code>a<br />b<br />c</code>
+      </li>
+      <li><code>f</code></li>
+    </ol>
+    <hr />
+
+    <h2>Q. 다음 중 while 반복문의 시작을 올바르게 작성한 것은?</h2>
+    <ol>
+      <li><code>while (i <> 7)</code></li>
+      <li><code>while (i !== 7)</code></li>
+      <li><code>while (i =! 5) then</code></li>
+      <li><code>while i != 7:</code></li>
+    </ol>
+    <hr />
+
+    <h2>Q. 다음 중 for 반복문의 시작을 올바르게 작성한 것은?</h2>
+    <ol>
+      <li><code>for i = 1 to 5</code></li>
+      <li><code>for (i <= 5; i++)</code></li>
+      <li><code>for (i = 0; i <= 5)</code></li>
+      <li><code>for (i = 0; i = 5; i++)</code></li>
+    </ol>
+    <hr />
+  </body>
+</html>
