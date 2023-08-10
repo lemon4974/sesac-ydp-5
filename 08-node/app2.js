@@ -14,14 +14,12 @@ const math2 = require('./math2');
 
 const { add, sub, multiple, divide } = require('./math2');
 
-console.log(add(5, 8));
-
 console.log(math2.add(5, 7));
 console.log(math2.sub(5, 7));
 console.log(math2.multiple(5, 7));
 console.log(math2.divide(5, 7));
+console.log(add(5, 8));
+// // console.log(add(5, 7));
+// const hello = require('./math');
 
-// console.log(add(5, 7));
-const hello = require('./math');
-
-console.log(hello(5, 7));
+// console.log(hello(5, 7));
