@@ -3,14 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>메인 페이지</title>
+    <!-- <title>메인 페이지</title> -->
   </head>
   <body>
+    <%- include('./includes/head', {title:'홈'}) %>
+    <%- include('./includes/header') %>
     <h1>Hello! Express!!</h1>
-    <p>안녕하세요~~~~</p>
+    <p>안녕하세요~~~~ <%= userId%>님!</p>
+    <p>비밀번호는 <%= userPw%>입니다!</p>
+    <!-- 변수명이 겹치는 경우 등이 일어나면 error 발생? 프론트엔드의 우선순위가 더 높다 -->
     <% for (let i=0; i<5; i++) { %>
     <div>하이</div>
+    <% } %> <% for (let i=0; i<btns.length; i++) { %>
+    <button type="button"><%= btns[i]%></button>
     <% } %>
+
+<br>
+<span><%= me.name%></span>
+<span><%= me.msg%></span>
+
+<br>
+<% if (isLogin) {%>
+  <h4>아직 로그인을 하지 않으셨군요</h4>
+  <% } else {%>
+    <h4>로그인을 하셨군요</h4>
+    <% } %>
+
     <a href="./login">로그인 </a>
     <a href="./register">회원가입 </a>
   </body>

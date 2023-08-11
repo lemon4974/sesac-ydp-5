@@ -12,6 +12,7 @@ const server = http.createServer(function (request, response) {
   try {
     // html 파일 불러오기
     const data = fs.readFileSync('./index2.html');
+    //일부로 파일명을 index2로 틀려준 상태
     response.writeHead(200, { 'content-type': 'text/html; charset=utf8' });
     response.write(data);
     response.end();
