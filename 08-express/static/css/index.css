@@ -1,0 +1,17 @@
+.header {
+  background-color: #222;
+  color: #eee;
+}
+
+.header > ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header > ul > li {
+  list-style: none;
+}
+
+body {
+  margin: 10vw;
+}

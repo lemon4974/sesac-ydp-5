@@ -6,6 +6,15 @@ const PORT = 8080;
 app.set('view engine', 'ejs'); //express에서 사용할 탬플릿 엔진 종류(ejs) 등록
 app.set('views', './views'); //템플릿 엔진 파일을 저장할 위치 등록
 
+console.log(__dirname);
+console.log(__dirname + '/static');
+
+// static 미들웨어 등록
+
+app.use('/views', express.static(__dirname + '/views'));
+app.use('/public', express.static(__dirname + '/static'));
+//앞은 주소 뒤는 파일 경로
+
 //(임시) 데이터베이스에서 가져온 회원 정보 (id, pw)
 const idFromDB = 'banana';
 const pwFromDB = '1234qwer';
@@ -25,7 +34,7 @@ app.get('/', function (request, response) {
       name: 'Claire',
       msg: '저는 OO 입니다. 반갑습니다!',
     },
-    isLogin: false,
+    isLogin: true,
   }); //index이름을 갖는 파일을 응답
 });
 
