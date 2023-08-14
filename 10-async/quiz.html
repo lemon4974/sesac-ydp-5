@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>콜백지옥 예시</h1>
+
+    <script>
+      // 1. 1초 뒤에 body 태그의 색상을 빨간색 변경 (setTimeout)
+      // 2. 1초 뒤에 body 태그의 색상을 빨 -> 1초 뒤 주 -> ... -> 1초 뒤에 파란색
+      setTimeout(function () {
+        document.body.style.backgroundColor = 'red';
+
+        setTimeout(function () {
+          document.body.style.backgroundColor = 'orange';
+
+          setTimeout(function () {
+            document.body.style.backgroundColor = 'yellow';
+
+            setTimeout(function () {
+              document.body.style.backgroundColor = 'green';
+
+              setTimeout(function () {
+                document.body.style.backgroundColor = 'blue';
+              }, 1000);
+            }, 1000);
+          }, 1000);
+        }, 1000);
+      }, 1000);
+    </script>
+  </body>
+</html>
