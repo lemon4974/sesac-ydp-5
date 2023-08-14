@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>폼 전송 결과</title>
+
+    <style>
+      span {
+        color: blue;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>폼 결과 확인하기</h1>
+    <div><span><%= userInfo.id %></span>님 환영합니다!</div>
+    <div>
+      <span><%= userInfo.id %></span>님은
+      <span><%= userInfo.gender %></span>군요.
+    </div>
+    <div>
+      생년월일은 <span><%= userInfo.date1 %></span>년<span
+        ><%= userInfo.date2 %></span
+      >월<span><%= userInfo.date3 %></span>일이군요!
+    </div>
+    <div>
+      <span><%= userInfo.id %></span>님의 취미는
+      <span><%= userInfo.hobby %></span>이군요.
+    </div>
+  </body>
+</html>
