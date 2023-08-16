@@ -9,7 +9,7 @@ app.set('/views', 'views');
 // app.use()
 
 // req.body 객체를 해석할 수 있도록 body-parser 미들웨어 등록
-app.use(express.urlencoded({ extended: true })); //post 요청으로 들어오는 모든 형식의 데이터를 파싱(분해, 분석)하겠다
+app.use(express.urlencoded({ extended: true })); // post 요청으로 들어오는 모든 형식의 데이터를 파싱(분해, 분석)하겠다
 app.use(express.json()); // json 형식으로 데이터를 주고 받음
 // json 키에 " " 표시
 

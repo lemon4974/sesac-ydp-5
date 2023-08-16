@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>폼</title>
+  </head>
+  <body>
+    <h1>post로 정보 받기</h1>
+    <form action="/postForm" method="post">
+      <h2>POST 요청</h2>
+      <div><span>이름</span><input type="text" name="id" required /></div>
+
+      <fieldset>
+        <legend>성별</legend>
+        <input type="radio" name="gender" id="man" value="남자" required /> 남자
+        <input type="radio" name="gender" id="woman" value="여자" required />
+        여자
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>생년월일</legend>
+        <select name="date1" placeholder="2010">
+          <option value="2010">2010</option>
+          <option value="2011">2011</option>
+          <option value="2012">2012</option></select
+        >년
+        <select name="date2" placeholder="1">
+          <% for (let i=1; i <= 12; i++){ %>
+          <option value="1"><%=i%></option>
+          <%}%> >월
+        </select>
+        <select name="date3" placeholder="1">
+          <% for (let i=1; i <= 31; i++){ %>
+          <option value="1"><%=i%></option>
+          <%}%> 일
+        </select>
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>관심사</legend>
+        <input type="checkbox" name="hobby" value="여행" />여행
+        <input type="checkbox" name="hobby" value="패션" />패션
+        <input type="checkbox" name="hobby" value="음식" />음식
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>기타</legend>
+        <label for="my-color">좋아하는 색상</label>
+        <input type="color" name="myColor" id="my-color" />
+        <br />
+        <label for="my-number">좋아하는 숫자</label>
+        <input type="number" name="myNumber" id="my-number" />
+      </fieldset>
+      <button type="submit">회원가입</button>
+    </form>
+  </body>
+</html>

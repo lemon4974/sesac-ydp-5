@@ -9,12 +9,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.render('index2');
+  res.render('index3');
 });
 
-app.get('/getForm', (req, res) => {
-  console.log(req.query);
-  res.render('result2', { userInfo: req.query });
+app.post('/postForm', (req, res) => {
+  console.log(req.body);
+  res.render('result3', { userInfo: req.body });
 });
 
 app.listen(PORT, () => {
