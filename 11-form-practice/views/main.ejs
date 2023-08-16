@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>일반 폼 실습 풀이</h1>
+
+    <a href="./practice1">GET 폼 실습</a>
+    <!-- href = "./practice1.ejs" 은 no -->
+    <!-- 프론트만 쓴다면 저게 맞지만, 지금은 ejs라는 별도를 쓰기 때문에 경로로 지정해주어야 함. -->
+
+    <!-- 1. 브라우저 창에서 url이 http://localhost:8000/prac1 바뀌었다?
+  2. GET /prac1 요청이 날라간 것 (클라 -> 서버)
+  3. 서버는 응답을 하기위해 GET /prac1 라우터를 찾습니다. (app.js)
+  4. GET /prac1 라우터의 응답을 함 (practice1.ejs를 브라우저에게 응답함) -->
+
+    <a href="/practice2">postForm 폼 실습</a>
+  </body>
+</html>
