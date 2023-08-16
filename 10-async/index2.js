@@ -9,13 +9,13 @@
 
 // // // 1. promise를 생성하는 코드
 // // function promise1(flag) {
-// //   // flag false true를 위한 불리안 인자.
+// //   // flag: false true를 위한 불리안 인자.
 // //   return new Promise(function (resolve, reject) {
 // //     if (flag) {
 // //       resolve(
 // //         `현재 프로미스의 상태는 fulfilled(이행)! then 메서드로 연결~ 이 때 flag 값은 ${flag}!`
 // //       );
-// //     } else {
+// //     } else {6
 // //       reject(
 // //         `현재 프로미스의 상태는 rejected(거절)! catch 메서드로 연결~ 이 때 flag 값은 ${flag}!`
 // //       );

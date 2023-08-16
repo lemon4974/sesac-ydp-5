@@ -13,7 +13,7 @@ console.log(__dirname + '/static');
 
 app.use('/views', express.static(__dirname + '/views'));
 app.use('/public', express.static(__dirname + '/static'));
-//앞은 주소 뒤는 파일 경로
+//앞은 주소(http://localhost:8080/public) 뒤는 파일 경로
 
 //(임시) 데이터베이스에서 가져온 회원 정보 (id, pw)
 const idFromDB = 'banana';
@@ -46,7 +46,12 @@ app.get('/sesac', function (request, response) {
 // 퀴즈
 // 1. /Login 경로로 요청이 들어오면 로그인 페이지(ejs)를 응답
 app.get('/login', function (request, response) {
-  response.render('login'); //login이름을 갖는 파일을 응답
+  // response.render('login'); //login이름을 갖는 파일을 응답
+
+  response.render('login', {
+    userId: idFromDB,
+    userPw: pwFromDB,
+  });
 });
 
 // 2. /register 경로로 요청이 들어오면 회원가입 페이지(ejs)를 응답

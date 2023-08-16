@@ -11,25 +11,50 @@
     <script>
       // 1. 1초 뒤에 body 태그의 색상을 빨간색 변경 (setTimeout)
       // 2. 1초 뒤에 body 태그의 색상을 빨 -> 1초 뒤 주 -> ... -> 1초 뒤에 파란색
-      setTimeout(function () {
-        document.body.style.backgroundColor = 'red';
+      // setTimeout(function () {
+      //   document.body.style.backgroundColor = 'red';
 
-        setTimeout(function () {
-          document.body.style.backgroundColor = 'orange';
+      //   setTimeout(function () {
+      //     document.body.style.backgroundColor = 'orange';
 
+      //     setTimeout(function () {
+      //       document.body.style.backgroundColor = 'yellow';
+
+      //       setTimeout(function () {
+      //         document.body.style.backgroundColor = 'green';
+
+      //         setTimeout(function () {
+      //           document.body.style.backgroundColor = 'blue';
+      //         }, 1000);
+      //       }, 1000);
+      //     }, 1000);
+      //   }, 1000);
+      // }, 1000);
+
+      // 실습 프로미스로 배경색 변경
+
+      function changeColor(color) {
+        return new Promise(function (resolve, reject) {
           setTimeout(function () {
-            document.body.style.backgroundColor = 'yellow';
+            document.body.style.backgroundColor = color;
+            resolve();
+          }, 2000);
+        });
+      }
 
-            setTimeout(function () {
-              document.body.style.backgroundColor = 'green';
-
-              setTimeout(function () {
-                document.body.style.backgroundColor = 'blue';
-              }, 1000);
-            }, 1000);
-          }, 1000);
-        }, 1000);
-      }, 1000);
+      changeColor('red')
+        .then(function () {
+          return changeColor('orange');
+        })
+        .then(function () {
+          return changeColor('yellow');
+        })
+        .then(function () {
+          return changeColor('green');
+        })
+        .then(function () {
+          return changeColor('blue');
+        });
     </script>
   </body>
 </html>
