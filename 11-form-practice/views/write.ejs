@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>글쓰기</h1>
+    <form action="/article" method="post">
+      <!-- dropdown 카테고리 분류 -->
+      <select name="category" id="option" required>
+        <option value="라이프">라이프</option>
+        <option value="여행">여행</option>
+        <option value="맛집">맛집</option>
+        <option value="문화">문화</option>
+        <option value="IT">IT</option>
+        <option value="시사">시사</option>
+      </select>
+
+      <label for="title">제목</label>
+      <input type="text" name="title-text" id="title" required />
+      <br />
+      <br />
+
+      <textarea
+        name="content"
+        id="text"
+        cols="260"
+        rows="10"
+        placeholder="여기에 글을 입력해주세요."
+      ></textarea>
+      <br />
+
+      <fieldset>
+        <legend>배경</legend>
+        <label for="my-color">색상</label>
+        <input type="color" name="myColor" id="my-color" />
+        <!-- 배경색 변경 연결... -->
+        <br />
+      </fieldset>
+      <br />
+      <!-- 태그 required # -->
+
+      <button type="submit">작성 완료</button>
+    </form>
+  </body>
+</html>
