@@ -44,9 +44,32 @@
     <!-- 동적 폼 전송 결과를 보여줄 곳 -->
     <div class="result"></div>
 
+    <hr />
+    <h1>OPEN API를 이용해 고양이 사진 랜덤 돌리기!</h1>
+    <button onclick="changeImg()">랜덤</button>
+    <br />
+    <img
+      width="500"
+      height="500"
+      src="https://w7.pngwing.com/pngs/633/239/png-transparent-mario-mario.png"
+      alt="고양이"
+    />
+
     <script>
       // frondtend javascript폼 선택, 정보 꺼내오기...
       const resultBox = document.querySelector('div.result');
+
+      const img = document.querySelector('img');
+
+      async function changeImg() {
+        const res = await axios({
+          method: 'get',
+          url: 'https://api.thecatapi.com/v1/images/search',
+        });
+        const { data } = res;
+        console.log(res);
+        img.src = data[0].url; //img 태그의 src 속성을 open api에서 받아온 랜덤 이미지 생성
+      }
 
       function ajaxGet() {
         console.log('ajaxGet 함수 호출!');
