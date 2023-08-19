@@ -41,16 +41,16 @@
 // }
 
 // // 1) promise then() 메서드 사용
-// // fetchFruits()
-// //   .then(function (f) {
-// //     console.log(f);
-// //   })
-// //   .catch(function (error) {
-// //     console.log(error);
-// //   });
+// fetchFruits()
+//   .then(function (f) {
+//     console.log(f);
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   });
 
 // // async-await 키워드 사용시
-// // 에러처리는 try-catch 구문으로 하게 됨!
+// 에러처리는 try-catch 구문으로 하게 됨!
 // async function printItems() {
 //   try {
 //     const fruits = await fetchFruits();
@@ -61,6 +61,9 @@
 //   }
 // }
 // printItems();
+
+/////////////////////////////////////////////////////////////////////////////////
+// 마트 코드를 다시 async로
 
 function goMart() {
   console.log('마트에 가서 어떤 음료를 살지 고민한다.');

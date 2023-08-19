@@ -32,7 +32,7 @@
 
 ////////////////////////////////////////////////////////////////////////
 
-// 1. 콜백함수를 이용해 비동기 처리
+// // 1. 콜백함수를 이용해 비동기 처리
 function goMart() {
   console.log('마트에 가서 어떤 음료를 살지 고민한다.');
   console.log(1);
@@ -44,7 +44,7 @@ function pickDrink(callback) {
   console.log(2);
   setTimeout(function () {
     // 3초 기다린 후에 코드 실행(= 3초 고민함)
-    console.log('고민 끝!!3');
+    console.log('고민 끝!!');
     product = '제로 콜라';
     price = 2000;
     console.log(3);
@@ -52,9 +52,9 @@ function pickDrink(callback) {
   }, 3000);
 }
 
-// function pay(product, price) {
-//   console.log(`상품명: ${product}, 가격 ${price}`); // undefined, 비동기 처리이기 때문.
-// }
+function pay(product, price) {
+  console.log(`상품명: ${product}, 가격 ${price}`); // undefined, 비동기 처리이기 때문.
+}
 
 let product;
 let price;
