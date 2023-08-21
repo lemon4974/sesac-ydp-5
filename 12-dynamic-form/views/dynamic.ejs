@@ -16,12 +16,12 @@
     <h1>동적 폼 연습하기</h1>
     <form name="register">
       <label for="name">이름</label>
-      <input type="text" name="name" id="name" value="새싹" />
+      <input type="text" name="name" id="name" required />
       <br />
 
       <fieldset>
         <legend>성별</legend>
-        <input type="radio" name="gender" id="male" value="m" checked />
+        <input type="radio" name="gender" id="male" value="m" required />
         <!--  -->
         <label for="male">남</label>
         <input type="radio" name="gender" id="female" value="f" />
@@ -33,7 +33,9 @@
       <button type="button" onclick="ajaxPost()">Ajax Post 제출</button>
       <br />
 
-      <button type="button" onclick="axiosGet()">Axios Get 제출</button>
+      <button type="button" onclick="axiosGet()">
+        Axios Get 제출 (+ form validation)
+      </button>
       <button type="button" onclick="axiosPost()">Axios Post 제출</button>
       <br />
 
@@ -135,43 +137,61 @@
           name: form.name.value,
           gender: form.gender.value,
         };
+
+        console.log(form.name.checkValidity());
+        // 같은 name으로 묶인 radio btn은 하나만 선택되더라도 true를 반환
+        console.log(form.gender[0].checkValidity());
+        console.log(form.gender[1].checkValidity());
+
         // axios 요청의 결과는 Promise 객체
         // -> then, catch 메서드로 체이닝이 가능!
         // -> async, await 도 사용할 수 있음!
         // axios는 jquery를 사용하지 않기에 순수 js 로 작성
-        axios({
-          // method: 'get', // 요청 방식(= form method 속성)
-          // url: '/axios', // 요청 방식(= form action 속성)
-          // params: data, // (차이점) 서버로 보낼 데이터 (query string)
+        // axios({
+        //   // method: 'get', // 요청 방식(= form method 속성)
+        //   // url: '/axios', // 요청 방식(= form action 속성)
+        //   // params: data, // (차이점) 서버로 보낼 데이터 (query string)
 
-          // params키를 사용하지 않고 query string 을 직접 정의해서 요청을 보낼 수 있음 (위와 동일)
-          method: 'get', // 요청 방식(= form method 속성)
-          url: `/axios?name=${form.name.value}&gender=${form.gender.value}`, // 요청 방식(= form action 속성)
-        })
-          .then(function (response) {
-            // console.log(response); // 서버의 응답 결과
-            // console.log(response.data); //서버의 응답 데이터를 확인
-            // 퀴즈 1. 객체 구조 분해
-            const { name, gender } = data;
-            console.log(name);
-            console.log(gender);
-            resultBox.textContent = `GET / axios 요청 완료!! ${form.name.value}님은 ${form.gender.value}이시죠`;
-          })
-          .catch(function (error) {
-            console.log('Error', error);
-          });
+        //   // params키를 사용하지 않고 query string 을 직접 정의해서 요청을 보낼 수 있음 (위와 동일)
+        //   method: 'get', // 요청 방식(= form method 속성)
+        //   url: `/axios?name=${form.name.value}&gender=${form.gender.value}`, // 요청 방식(= form action 속성)
+        // })
+        //   .then(function (response) {
+        //     // console.log(response); // 서버의 응답 결과
+        //     // console.log(response.data); //서버의 응답 데이터를 확인
+        //     // 퀴즈 1. 객체 구조 분해
+        //     const { name, gender } = data;
+        //     console.log(name);
+        //     console.log(gender);
+        //     resultBox.textContent = `GET / axios 요청 완료!! ${form.name.value}님은 ${form.gender.value}이시죠`;
+        //   })
+        //   .catch(function (error) {
+        //     console.log('Error', error);
+        //   });
 
         // 퀴즈 2. axios 요청 처리 async/await 로 변경
 
         // 데이터가 오고 가기에 시간이 걸림
         try {
-          const response = await axios({
-            method: 'get',
-            url: '/axios',
-            params: data,
-          }); // response: 서버의 응답 결과
-          const { name, gender } = response.data;
-          resultBox.textContent = `GET /axios 요청 완료 ${name}님은 ${gender}이시죠?`;
+          // 폼 유효성 검사
+          // name input에 입력된 값이 없다면, '이름을 입력해주세요!'
+          // gender radio btn을 선택하지 않았다면, '성별을 선택해주세요!'
+          // 둘 다 입력이 잘 되었다면, axios로 back에 요청 날리기
+
+          if (!form.name.checkValidity()) {
+            resultBox.textContent = `이름을 입력해주세요!`;
+            return;
+          } else if (!form.gender[0].checkValidity()) {
+            resultBox.textContent = `성별을 선택해주세요!`;
+          } else {
+            const response = await axios({
+              method: 'get',
+              url: '/axios',
+              params: data, //axios GET은 params
+            }); // response: 서버의 응답 결과
+            const { name, gender } = response.data;
+            resultBox.textContent = `GET /axios 요청 완료 ${name}님은 ${gender}이시죠?`;
+          }
         } catch (error) {
           console.log('Error', error);
           resultBox.textContent = `알 수 없는 에러 발생! 다시 시도해주세요`;
@@ -214,8 +234,8 @@
         };
 
         // axios({
-        //   method: 'get',
-        //   url: `/axios?name=${form.name.value}&gender=${form.gender.value}`,
+        //   method: 'post',
+        //   url: `/axios`,
         // })
         //   .then(function (response) {
         //     const { name, gender } = data;
@@ -232,7 +252,7 @@
           const response = await axios({
             method: 'post',
             url: '/axios',
-            params: data,
+            data: data, //axios POST는 data로
           }); // response: 서버의 응답 결과
           const { name, gender, msg } = response.data; // 객체 구조분해 할당
           resultBox.textContent = `POST /axios 요청 완료!! ${name}님은 ${gender}이시죠?ㅎㅎ ${msg}`;

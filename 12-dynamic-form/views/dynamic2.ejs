@@ -4,17 +4,186 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <h1>폼 전송 결과</h1>
-    <ul>
-      <li>이름: <%= user.username %></li>
-      <li>성별: <%= user.gender %></li>
-      <li>
-        생일: <%= user.birthYear %>년<%= user.birthMonth %>월<%= user.birthDay
-        %>일
-      </li>
-      <li>취미 :<%= user.hobby %></li>
-    </ul>
+    <h1>실습 1. axios get 회원가입</h1>
+    <form name="register">
+      <label for="name">이름</label>
+      <input type="text" name="name" id="name" />
+      <br />
+
+      <fieldset>
+        <legend>성별</legend>
+        <input type="radio" name="gender" id="male" value="male" />
+        <label for="male">남자</label>
+        <input type="radio" name="gender" id="female" value="female" />
+        <label for="female">여자</label>
+      </fieldset>
+      <br />
+
+      <fieldset>
+        <legend>생년월일</legend>
+        <select name="birthYear" id="year">
+          <% for (let i = 0; i < 50; i++) { %>
+          <option value="<%= 2010 - i %>"><%= 2010 - i %></option>
+          <% } %>
+        </select>
+        <label for="year">년</label>
+        <select name="birthMonth" id="month">
+          <% for (let i = 1; i < 13; i++) { %>
+          <option value="<%= i %>"><%= i %></option>
+          <% } %>
+        </select>
+        <label for="month">월</label>
+        <select name="birthDay" id="day">
+          <% for (let i = 1; i < 31; i++) { %>
+          <option value="<%= i %>"><%= i %></option>
+          <% } %>
+        </select>
+        <label for="day">일</label>
+      </fieldset>
+      <br />
+
+      <fieldset>
+        <legend>관심사</legend>
+        <input type="checkbox" name="hobby" id="travel" value="travel" />
+        <label for="travel">여행</label>
+        <input type="checkbox" name="hobby" id="fashion" value="fashion" />
+        <label for="fashion">패션</label>
+        <input type="checkbox" name="hobby" id="food" value="food" />
+        <label for="food">음식</label>
+      </fieldset>
+      <br />
+
+      <button type="button" onclick="axiosGet()">회원가입</button>
+    </form>
+    <!-- 동적 폼 GET 전송 결과를 보여줄 곳 -->
+    <div class="result"></div>
+
+    <hr />
+    <form name="login">
+      <label for="userId">아이디</label>
+      <input type="text" id="userId" name="userId" required />
+      <label for="userPw">비밀번호</label>
+      <input type="password" id="userPw" name="userPw" required />
+      <button type="button" onclick="clickLogin();">로그인</button>
+    </form>
+    <!-- 동적 폼 POST 전송 결과를 보여줄 곳 -->
+    <div class="information"></div>
+
+    <script>
+      const resultBox = document.querySelector('div.result');
+      const information = document.querySelector('div.information');
+
+      const realId = 'banana';
+      const realPw = '1234';
+
+      async function axiosGet() {
+        console.log('axiosGet 함수 호출!');
+
+        const getSelected = document.querySelectorAll(
+          'input[name="hobby"]:checked'
+        );
+        console.log(getSelected);
+        //체크박스의 경우 하나 이상이 선택될 수 있기 때문에 하나의 값을 저장하려 하면 안됨 + 배열로 저장이 됨을 기억
+        const hobbies = []; // 선택된 체크박스의 값만 저장하려는 배열
+        // forEach를 이용해서 배열에 push 해줘야 함
+        getSelected.forEach((elem) => {
+          if (elem.checked) {
+            hobbies.push(elem.value);
+          }
+        });
+        console.log(hobbies);
+
+        const form = document.forms['register'];
+        const data = {
+          name: form.name.value,
+          gender: form.gender.value,
+          birthYear: form.birthYear.value,
+          birthMonth: form.birthMonth.value,
+          birthDay: form.birthDay.value,
+          hobby: hobbies,
+        };
+        axios({
+          method: 'get',
+          url: '/axios',
+          params: data,
+        })
+          .then(function (response) {
+            console.log(response);
+            console.log(response.data);
+
+            const { name, gender, birthYear, birthMonth, birthDay, hobby } =
+              data;
+            console.log(name);
+            console.log(gender);
+            resultBox.textContent = ` ${form.name.value} ${form.gender.value} ${form.birthDay.value}`;
+          })
+          .catch(function (error) {
+            console.log('Error', error);
+          });
+
+        try {
+          const response = await axios({
+            method: 'get',
+            url: '/axios',
+            params: data,
+          });
+          const { name, gender, birthYear, birthMonth, birthDay, hobby } =
+            response.data;
+          resultBox.textContent = `${name}님은 ${gender}이시죠? ${birthYear}년${birthMonth}월${birthDay}일에 태어나셨네요. 취미는 ${hobby}이군요`;
+          // 배열을 ,로 구분해서 배열 그 자체가 아닌 문자열로 출력하는 기능이 textContent에도 innerHtml에도 존재...
+        } catch (error) {
+          console.log('Error', error);
+          resultBox.textContent = `알 수 없는 에러 발생! 다시 시도해주세요`;
+        }
+      }
+
+      async function clickLogin() {
+        console.log('axiosPost 함수 호출!');
+
+        const form = document.forms['login'];
+        const data = {
+          userId: form.userId.value,
+          userPw: form.userPw.value,
+        };
+
+        axios({
+          method: 'post',
+          url: `/axios`,
+          data: data,
+        })
+          .then(function (response) {
+            const { userId, userPw } = data;
+            console.log(userId);
+            console.log(userPw);
+            information.textContent = `POST / axios 요청 완료!! ${form.userId.value}님은 ${form.userPw.value}이시죠`;
+          })
+          .catch(function (error) {
+            console.log('Error', error);
+          });
+
+        // async/await 로 변경
+        try {
+          const response = await axios({
+            method: 'post',
+            url: '/axios',
+            params: data,
+          }); // response: 서버의 응답 결과
+          const { userId, userPw } = response.data; // 객체 구조분해 할당
+          console.log(data);
+          <% if (userId !== realId || userPw !== realPw) { %>
+          <% information.textContent = `${userId}님! 로그인 성공!`; %>
+          <% } else { %>
+            information.textContent = '아이디 또는 패스워드 오류!';
+          }
+          information.textContent = `POST /axios 요청 완료!! ${userId}님은 ${userPw}이시죠?ㅎㅎ`;
+        } catch (error) {
+          console.log('Error', error);
+          information.textContent = `알 수 없는 에러 발생! 다시 시도해주세요`;
+        }
+      }
+    </script>
   </body>
 </html>
