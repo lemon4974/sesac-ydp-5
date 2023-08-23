@@ -179,6 +179,7 @@
           // 둘 다 입력이 잘 되었다면, axios로 back에 요청 날리기
 
           if (!form.name.checkValidity()) {
+            // !false
             resultBox.textContent = `이름을 입력해주세요!`;
             return;
           } else if (!form.gender[0].checkValidity()) {
