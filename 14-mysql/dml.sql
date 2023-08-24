@@ -193,10 +193,13 @@ select * from customer where custname like '%수'; -- 이름이 몇자든 마지
 
 -- 복합조건 (AND, OR, NOT)
 -- 주소지가 대한민국이고, 2000년생 이후 출생 고객 검색
+select * from customer where addr like '대한민국%' and birth >= '2000-01-01';
 
 -- 주소지가 미국이거나 영국인 고객 검색
+select * from customer where addr like '미국%' and birth >= '영국%';
 
 -- 휴대폰 번호 마지막 자리가 4가 아닌 고객 검색
+select * from customer where phone NOT LIKE '%_4';
 
 
 
