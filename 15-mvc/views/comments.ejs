@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MVC 패턴</title>
+  </head>
+  <body>
+    <h1>댓글 목록 확인</h1>
+    <%=comments[0].comment%>
+    <a href="/">홈으로 이동하기</a>
+
+    <ul>
+      <% for (let cmt of comments) { %>
+      <li>
+        <%= cmt.userid %> -
+        <a href="/comment/<%=cmt.id%>">T<%= cmt.comment %></a>
+      </li>
+      <% } %>
+    </ul>
+  </body>
+</html>
