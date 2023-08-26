@@ -12,9 +12,9 @@ const router = express.Router();
 
 router.get('/', controller.capital);
 // '/' 경로로 접근 시, controller의 main으로 즉 Cmain의 exports.main이 실행되도록 하는 경로 설정
-// router.get('/info_all', controller.info_all);
+router.get('/info_all', controller.info_all);
 // '/comments' 경로로 접근 시, controller의 main으로 즉 Cmain의 exports.comments이 실행되도록 하는 경로 설정
-// router.get('/info/:id', controller.info);
+router.get('/info/:id', controller.info);
 // '/comment/:id' 경로로 접근 시, controller의 main으로 즉 Cmain의 exports.comment이 실행되도록 하는 경로 설정
 
 module.exports = router;

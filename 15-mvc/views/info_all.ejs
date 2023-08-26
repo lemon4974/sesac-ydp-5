@@ -9,10 +9,10 @@
     <img src="" alt="바다" />
     <a href="/">홈으로 이동하기</a>
     <ul>
-      <% for (let cmt of comments) { %>
+      <% for (let info of information) { %>
       <li>
-        <%= cmt.userid %> -
-        <a href="/info/<%=cmt.id%>">T<%= cmt.comment %></a>
+        <%= info.id %> -
+        <a href="/info/<%=info.id%>">aaa</a>
       </li>
       <% } %>
     </ul>

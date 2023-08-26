@@ -8,21 +8,21 @@ exports.capital = (req, res) => {
   res.render('index2');
 };
 
-// exports.info_all = (req, res) => {
-//   // Comment.getCommentAll(): 댓글 배열 목록
-//   res.render('info_all', { information: info.getmsgAll() });
-// };
+exports.info_all = (req, res) => {
+  // Comment.getCommentAll(): 댓글 배열 목록
+  res.render('info_all', { information: info.getmsgAll() });
+};
 // '/comments'로의 경로로 이 함수에 접근(?)시 이 함수가 실행되도록 함.
 // 위 함수는 comments를 render. 위의 모듈로 Comment에 객체로 정보를 가져온 후, Comment.getCommentAll()를 접근?
-// exports.info = (req, res) => {
-//   const seaId = Number(req.params.id);
-//   const comments = Comment.getmsgAll();
-//   // '/comment/:id'로의 경로로 이 함수에 접근(?)시 이 함수가 실행되도록 함.
-//   // 위 함수는 comments를 render. 위의 모듈로 Comment에 객체로 정보를 가져온 후, Comment.getCommentAll()를 접근?
+exports.info = (req, res) => {
+  const seaId = Number(req.params.id);
+  const comments = Comment.getmsgAll();
+  // '/comment/:id'로의 경로로 이 함수에 접근(?)시 이 함수가 실행되도록 함.
+  // 위 함수는 comments를 render. 위의 모듈로 Comment에 객체로 정보를 가져온 후, Comment.getCommentAll()를 접근?
 
-//   if (!comments[seaId - 1]) {
-//     return res.render('404');
-//   }
+  if (!comments[seaId - 1]) {
+    return res.render('404');
+  }
 
-//   res.render('info', { info: comments[seaId - 1] });
-// };
+  res.render('info', { info: comments[seaId - 1] });
+};
