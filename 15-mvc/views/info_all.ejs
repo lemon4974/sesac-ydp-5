@@ -3,17 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MVC 패턴</title>
+    <title>MVC 패턴 실습</title>
   </head>
   <body>
-    <h1>댓글 목록 확인</h1>
+    <img src="" alt="바다" />
     <a href="/">홈으로 이동하기</a>
-
     <ul>
       <% for (let cmt of comments) { %>
       <li>
         <%= cmt.userid %> -
-        <a href="/comment/<%=cmt.id%>">T<%= cmt.comment %></a>
+        <a href="/info/<%=cmt.id%>">T<%= cmt.comment %></a>
       </li>
       <% } %>
     </ul>

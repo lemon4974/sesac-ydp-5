@@ -1,42 +1,25 @@
-const Comment = require('../model/Comment');
-
-// const comments = [
-//   {
-//     id: 1,
-//     userid: 'helloworld',
-//     date: '2022-10-31',
-//     comment: '안녕하세요^~^',
-//   },
-//   {
-//     id: 2,
-//     userid: 'happy',
-//     date: '2022-11-01',
-//     comment: '반가워유',
-//   },
-//   {
-//     id: 3,
-//     userid: 'lucky',
-//     date: '2022-11-02',
-//     comment: '오 신기하군',
-//   },
-//   {
-//     id: 4,
-//     userid: 'bestpart',
-//     date: '2022-11-02',
-//     comment: '첫 댓글입니당ㅎㅎ',
-//   },
-// ];
+// Controller
+// 주로 함수가 저장된다. 어떤 것이 실행되어야 하는지!
+const Comment = require('../model/Comment.js');
+// const Comment = {getCommentAll: function}
+// Comment.js 파일은 getCommentAll 이 export되는 파일로 DB와 연결되는 모델 파일
 
 exports.main = (req, res) => {
   res.render('index');
 };
+// '/'로의 경로로 이 함수에 접근(?)시 이 함수가 실행되도록 함.
+// 위 함수는 index 에만 render를 실행시키기 때문에 별도로 getCommentAll에 대한 정보를 전달하지 않음
 exports.comments = (req, res) => {
-  res.render('comments', { comments: comments });
+  // Comment.getCommentAll(): 댓글 배열 목록
+  res.render('comments', { comments: Comment.getCommentAll() });
 };
+// '/comments'로의 경로로 이 함수에 접근(?)시 이 함수가 실행되도록 함.
+// 위 함수는 comments를 render. 위의 모듈로 Comment에 객체로 정보를 가져온 후, Comment.getCommentAll()를 접근?
 exports.comment = (req, res) => {
-  console.log('req.params', req.params); // {id: '1'}, 변수와 같은 역할을 한다.
   const cmtId = Number(req.params.id);
-  const comments = Comment.getCommentAll();
+  const comments = Comment.getCommentAll(); // 댓글 목록 배열
+  // '/comment/:id'로의 경로로 이 함수에 접근(?)시 이 함수가 실행되도록 함.
+  // 위 함수는 comments를 render. 위의 모듈로 Comment에 객체로 정보를 가져온 후, Comment.getCommentAll()를 접근?
 
   if (!comments[cmtId - 1]) {
     return res.render('404');

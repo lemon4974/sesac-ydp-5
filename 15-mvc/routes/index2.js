@@ -3,18 +3,18 @@
 // 이 안에서는 경로 선언만 위주로
 const express = require('express');
 // 저장된 express를 가져와 객체로 저장
-const controller = require('../controller/Cmain');
+const controller = require('../controller/pr-control');
 // const controller = {main: function, comments: function, comment: function}
 const router = express.Router();
 // express안에 Router()라는 모듈이 이미 안에 있음
 
 // localhost:PORT/ 기본 경로
 
-router.get('/', controller.main);
+router.get('/', controller.capital);
 // '/' 경로로 접근 시, controller의 main으로 즉 Cmain의 exports.main이 실행되도록 하는 경로 설정
-router.get('/comments', controller.comments);
+// router.get('/info_all', controller.info_all);
 // '/comments' 경로로 접근 시, controller의 main으로 즉 Cmain의 exports.comments이 실행되도록 하는 경로 설정
-router.get('/comment/:id', controller.comment);
+// router.get('/info/:id', controller.info);
 // '/comment/:id' 경로로 접근 시, controller의 main으로 즉 Cmain의 exports.comment이 실행되도록 하는 경로 설정
 
 module.exports = router;

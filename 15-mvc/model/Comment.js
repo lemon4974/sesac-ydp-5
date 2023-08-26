@@ -1,8 +1,10 @@
-// model!
+//Model!(DB와 연결)
 // db 에서 전체 댓글 목록을 받아왔다고 가정
 
 exports.getCommentAll = () => {
-  [
+  // cf) return의 경우 같은 줄에 [가 있어야 return 이 가능...
+  // 원래 return 이런게 있었나??
+  return [
     {
       id: 1,
       userid: 'helloworld',
