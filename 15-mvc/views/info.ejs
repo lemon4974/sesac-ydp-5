@@ -4,9 +4,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MVC 패턴 실습</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+      .message-body {
+        margin: 10 auto;
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+      }
+
+      .pic{
+        /* width: 74vw; */
+        height: 45vh;
+        margin: 0 auto;
+        border-radius: 5%;
+      }
+
+      .words{
+        width: 74vw;
+        margin: 0 auto; 
+        text-align: justify;
+
+      }
+    </style>
   </head>
   <body>
-    <h1>덥다</h1>
-    <p>바다... 가고 싶다</p>
+    <article class="message is-dark">
+      <div class="message-header">
+        <p>인도양의 섬 '<%= info.name %>'</p>
+        <button class="delete" aria-label="delete"></button>
+      </div>
+      <div class="message-body">
+        <br>
+        <img src="<%= info.href %>" alt="대표 사진" class = "pic">
+        <br>
+        <br>
+        <article class="message is-dark words">
+          <div class="message-body">
+            <%= info.msg%>
+          </div>
+          <br>
+          <a href="/info_all">목록</a>
+        </article>
+
+      </div>
+    </article>
+
+    
   </body>
 </html>

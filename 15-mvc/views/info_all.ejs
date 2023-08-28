@@ -4,17 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MVC 패턴 실습</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+      /* body {
+        margin: 0 auto;
+      } */
+      .pic {
+        border-radius: 5%;
+        width: 50vw;
+
+      }
+      .menu {
+        width: 50vw;
+        margin: 0 auto;
+        margin-top: 10vh;
+      }
+    </style>
+
   </head>
   <body>
-    <img src="" alt="바다" />
-    <a href="/">홈으로 이동하기</a>
-    <ul>
-      <% for (let info of information) { %>
-      <li>
-        <%= info.id %> -
-        <a href="/info/<%=info.id%>">aaa</a>
-      </li>
-      <% } %>
-    </ul>
+    <aside class="menu">
+    <img src="https://cdn.pixabay.com/photo/2017/12/15/13/51/polynesia-3021072_1280.jpg" alt="바다" class = "pic"/>
+      <ul class="menu-list">
+        <li>
+          
+          <ul>
+            <% for (let info of information) { %>
+              <li>
+                <a href="/info/<%=info.id%>"><%= info.name %></a>
+              </li>
+              <% } %>
+          </ul>
+        </li>
+      </ul>
+      <p class="menu-label"><a href="/">HOME</a>
+      </p>
+      <ul class="menu-list">
+
+      </ul>
+    </aside>
+    
   </body>
 </html>
