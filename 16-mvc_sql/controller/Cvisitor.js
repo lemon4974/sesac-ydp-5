@@ -16,3 +16,14 @@ exports.getVisitors = (req, res) => {
     res.render('visitor', { data: result });
   });
 };
+
+exports.postVisitor = (req, res) => {
+  console.log('controller>>', req.body);
+  // 예상 { name: xx, comment: yy }
+
+  Visitor.postVisitor(req.body, (insertId) => {
+    console.log('controller insertId>>', insertId);
+    res.send({ id: insertId, name: req.body.name, comment: req.body.comment });
+    // client로 보내는 중.
+  });
+};

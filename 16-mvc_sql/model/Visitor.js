@@ -28,3 +28,21 @@ exports.getVisitors = (callback) => {
   });
   //   model > controller로 데이터 넘겨줌
 };
+
+exports.postVisitor = (data, callback) => {
+  // 매개 변수
+  // data: 프론트엔드에서 유저가 입력한 값 (req.body)
+  // callback : query실행 후 호출 취소
+
+  conn.query(
+    `insert into visitor(name, comment)  values("${data.name}", "${data.comment}")`,
+    (err, rows) => {
+      if (err) {
+        throw err;
+      }
+
+      console.log('model >>', rows);
+      callback(rows.insertId);
+    }
+  );
+};
