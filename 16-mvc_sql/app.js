@@ -8,7 +8,7 @@ app.use('/static', express.static(__dirname + '/static'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// [라우터 분리]
+// [라우터(경로) 분리]
 const indexRouter = require('./routes'); // index는 생략 가능!
 app.use('/', indexRouter); // localhost:PORT/ 경로를 기본으로 ./routes/index.js 파일에 선언한 대로 동작
 

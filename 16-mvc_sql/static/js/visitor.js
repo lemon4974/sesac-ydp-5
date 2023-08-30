@@ -28,7 +28,7 @@ function createVisitor() {
             <td>${id}</td>
             <td>${name}</td>
             <td>${comment}</td>
-            <td><button type="button">수정</button></td>
+            <td><button type="button" onclick="editVisitor(${id})">수정</button></td>
             <td><button type="button" onclick="deleteVisitor(this, ${id})>삭제</button></td>
         </tr>
     `;
@@ -63,4 +63,82 @@ function deleteVisitor(obj, id) {
     alert('삭제 성공!');
     obj.parentElement.parentElement.remove();
   });
+}
+
+function editVisitor(id) {
+  console.log(id, '번 방명록 수정!!');
+
+  // TODO
+  // 1. id를 가지고 방명록 하나를 조회 (Read one) -> input에 각각 value로 저장
+  axios({
+    // GET /visitor/:id
+    method: 'get',
+    url: `/visitor/${id}`,
+
+    // GET /visitor?id=1
+    // method: 'get',
+    // url: `/visitor?id=${id}`,
+    // params: {
+    //   id: id,
+    // },
+  }).then((res) => {
+    console.log(res);
+    console.log(res.data);
+    //input에 각각 value로 저장
+    const { name, comment } = res.data;
+    const form = document.forms['visitor-form'];
+    form.name.value = name;
+    form.comment.value = comment;
+  });
+
+  // 2. [변경], [취소] 버튼 보이기
+  const btns = `
+  <button type="button" onclick="editDo(${id})">변경</button>
+  <button type="button" onclick="editCancel()">취소</button>
+  `;
+  buttonGroup.innerHTML = btns;
+}
+
+// [변경] 버튼 클릭시 -> 실제 수정 요청해서 방명록 업데이트 수행
+function editDo(id) {
+  const form = document.forms['visitor-form'];
+  axios({
+    method: 'patch',
+    url: '/visitor',
+    data: {
+      id,
+      name: form.name.value,
+      comment: form.comment.value,
+    },
+  }).then((res) => {
+    console.log(res);
+    console.log(res.data);
+    const { isUpdated } = res.data;
+
+    if (isUpdated) {
+      alert('수정 완료!!');
+    }
+
+    const tr = document.querySelector(`#tr_${id}`).children;
+    tr[1].textContent = form.name.value;
+    tr[2].textContent = form.comment.value;
+
+    // 수정 작업 이루어지고 나서, input 초기화 & [등록] 버튼 보이기
+    editCancel();
+  });
+}
+
+// [취소] 버튼 누르면
+// -input 초기화
+// -buttonGroup 요소 안에 다시 [등록] 버튼 보이기
+function editCancel() {
+  // 1. input 초기화
+  const form = document.forms['visitor-form'];
+  form.name.value = '';
+  form.comment.value = '';
+
+  // 2. [등록] 버튼 다시 보이기
+  const createBtn =
+    '<button type="button" onclick="createVisitor()">등록</button>';
+  buttonGroup.innerHTML = createBtn;
 }

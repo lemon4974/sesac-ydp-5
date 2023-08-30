@@ -21,7 +21,7 @@ exports.getVisitors = (callback) => {
   conn.query('select * from visitor', (err, rows) => {
     if (err) {
       throw err;
-      // throw... 정확히 뭐지?
+      // throw: 예외 처리
     }
     console.log('model>> ', rows);
     callback(rows);
@@ -34,6 +34,10 @@ exports.postVisitor = (data, callback) => {
   // data: 프론트엔드에서 유저가 입력한 값 (req.body)
   // callback : query실행 후 호출 취소
 
+  // https://m.blog.naver.com/rwans0397/220665348298
+  // query 메서드에 매개변수는 mysql 소스 입력과 콜백 함수가 있다.
+  // 콜백 함수에 매개변수는 err, rows, fields 변수들이 있다 err 변수는 실행 중 에러를 나타내고 rows 변수는 접속된 행을 나타낸다.
+  // fields 변수는 결과 영향을 받은 열에 정보들을 나타낸다. 그래서 조건문으로 에러가 없다면 실행하도록 한다.
   conn.query(
     `insert into visitor(name, comment)  values("${data.name}", "${data.comment}")`,
     (err, rows) => {
@@ -57,5 +61,30 @@ exports.deleteVisitor = (id, callback) => {
 
     console.log('model >> ', rows); // rows 삭제된 정보 저장
     callback(true); // { id: id }로 쓸 수도 있음. 삭제가 성공했다는 의미의 true. 개발자가 정하기 나름
+  });
+};
+
+exports.getVisitor = (id, callback) => {
+  conn.query(`select * from visitor where id = ${id}`, (err, rows) => {
+    if (err) {
+      throw err;
+    }
+
+    console.log(rows); // [ {} ]
+    callback(rows[0]);
+    // 하나의 객체만 받을 수 있도록 [0]
+  });
+};
+
+exports.updateVisitor = (updateData, callback) => {
+  const { id, name, comment } = updateData;
+  const sql = `update visitor set name='${name}', comment = '${comment}' where id = ${id}`;
+  conn.query(sql, (err, rows) => {
+    if (err) {
+      throw err;
+    }
+
+    console.log(rows);
+    callback();
   });
 };
