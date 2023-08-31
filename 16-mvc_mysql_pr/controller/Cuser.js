@@ -5,25 +5,45 @@ exports.main = (req, res) => {
   res.render('index');
 };
 
-// router.get('/user/signup', controller.main);
-// router.post('/user/signup', controller.main);
+exports.signup = (req, res) => {
+  res.render('signup');
+};
 
-// router.get('/user/signin', controller.main);
-// router.post('/user/signin', controller.main);
-
-// router.post('/user/profile', controller.main);
-// router.post('/user/profile/edit', controller.main);
-// router.post('/user/profile/delete', controller.main);
-
-exports.signUp = (req, res) => {
-  User.signUp((result) => {
-    // console.log('controller-getUser>>', result);
-    res.render('signup', { data: result });
+exports.postSignup = (req, res) => {
+  User.signup(req.body, (result) => {
+    res.send(result); // A) 싸이클 종료(연결 종료)
   });
 };
 
-exports.signIn = (req, res) => {
-  User.signIn((result) => {
-    res.render('signin', { data: result });
+exports.signin = (req, res) => {
+  res.render('signin');
+};
+
+exports.postSignin = (req, res) => {
+  User.signin(req.body, (result) => {
+    if (result.length > 0) {
+      // Q) length는 왜 나온 것이며...
+      res.send(true);
+    } else {
+      res.send(false);
+    }
+  });
+};
+
+exports.postProfile = (req, res) => {
+  User.postProfile(req.body.userid, (result) => {
+    res.render('profile', { data: result[0] });
+  });
+};
+
+exports.editProfile = (req, res) => {
+  User.editProfile(req.body, () => {
+    res.send(true);
+  });
+};
+
+exports.deleteProfile = (req, res) => {
+  User.deleteProfile(req.body.id, () => {
+    res.send(true);
   });
 };

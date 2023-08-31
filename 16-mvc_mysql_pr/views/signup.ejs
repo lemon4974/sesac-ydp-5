@@ -13,12 +13,44 @@
       <button type="button" onclick="register();">Register</button>
     </form>
     <!-- TODO: href 속성값 설정하기 -->
-    <a href="/user/signin">Login</a>
+    <a href="/signin">Login</a>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script>
       // TODO: [Register] 버튼 클릭시 서버에 회원가입 요청하기
       // POST /user/signup
-      function register() {}
+      function register() {
+        const form = document.forms['form_register'];
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+        //이 axios는 뭘까...서버로 request하는 정보를 실어보내주는 건가?
+        axios({
+          method: 'POST',
+          url: '/signup', //post 로 user/signup이 여기였구나...
+          data: {
+            userid: form.userid.value,
+            pw: form.pw.value,
+            name: form.name.value,
+          },
+        })
+          .then((res) => {
+            console.log(res);
+            return res.data;
+          })
+          .then(() => {
+            console.log('create >>');
+            // (1) alert 띄우기
+            alert('회원가입 성공!!');
+            // (2) 가입 성공시 로그인 페이지로 이동
+            // document.location.href란?
+            // javascript에서 페이지 이동할 수 있는 방법
+            // document 객체를 사용하기 때문에 프론트에서 사용 가능
+            document.location.href = '/signin';
+          });
+      }
     </script>
   </body>
 </html>
