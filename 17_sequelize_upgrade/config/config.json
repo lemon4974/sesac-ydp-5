@@ -2,7 +2,7 @@
   "development": {
     "username": "user",
     "password": "1234",
-    "database": "sesac",
+    "database": "sesac2",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "timezone": "Asia/Seoul"
