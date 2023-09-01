@@ -11,7 +11,8 @@ console.log(__dirname + '/static');
 
 // static 미들웨어 등록
 
-app.use('/views', express.static(__dirname + '/views'));
+// app.use('/views', express.static(__dirname + '/views'));
+app.set('views', './views');
 app.use('/public', express.static(__dirname + '/static'));
 //앞은 주소(http://localhost:8080/public) 뒤는 파일 경로
 

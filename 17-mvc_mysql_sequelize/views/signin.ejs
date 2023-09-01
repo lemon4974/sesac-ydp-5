@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <%- include('include/include', { title: '로그인' })%>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+
+  <body>
+    <h1>로그인</h1>
+    <!-- 
+      [로그인] 버튼을 클릭하면 profile.ejs에서 특정 유저 정보를 보여주어야 하기 때문에 
+      userid 정보를 value에 저장(POST /user/signin 요청의 응답을 받은 후 수행)하여
+      폼(input)이 보이지 않도록 hidden 처리함
+    -->
+    <form name="form_info" action="/user/profile" method="POST">
+      <input type="hidden" name="userid" />
+    </form>
+
+    <form name="form_login">
+      <label for="userid">ID</label>
+      <input id="userid" type="text" name="userid" required /><br />
+      <label for="password">Password</label>
+      <input id="password" type="password" name="pw" required /><br />
+      <button type="button" onclick="login();">Login</button>
+    </form>
+
+    <!-- TODO: href 속성값 설정하기 -->
+    <a href="/signup">Register</a>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+      // TODO: [Login] 버튼 클릭시 서버에 로그인 요청하기
+      // POST /user/signin
+      function login() {
+        const form_login = document.forms['form_login']; // 로그인 폼
+
+        if (!form_login.checkValidity()) {
+          form_login.reportValidity();
+          return;
+        }
+
+        axios({
+          method: 'POST',
+          url: '/signin',
+          data: {
+            userid: form_login.userid.value,
+            pw: form_login.pw.value,
+          },
+        })
+          .then((res) => {
+            return res.data;
+          })
+          .then((data) => {
+            console.log('post profile >>', data); // true or false
+            if (data) {
+              // true
+              // (1) alert 띄우기
+              alert('로그인 성공');
+              // (2) form_info 폼 선택
+              const form_info = document.forms['form_info']; // 로그인 폼 위에 "숨겨진 폼"
+              // (3) form_login의 userid 값을 form_info의 userid value에 저장
+              form_info.userid.value = form_login.userid.value;
+              // (4) form_info 제출
+              // 숨겨진 폼인 form[name="form_info"] 요소의 method와 action 속성 값에 의해
+              // POST /user/profile 요청을 수행
+              // <button type="submit> 을 누른 것과 동일한 효과
+              form_info.submit();
+            } else {
+              // false
+              // (1) alert 띄우기
+              alert('로그인 실패');
+              // (2) form_info 초기화 (제출 안함)
+              form_login.reset();
+            }
+          });
+      }
+    </script>
+  </body>
+</html>
