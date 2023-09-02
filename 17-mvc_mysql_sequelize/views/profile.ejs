@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <%- include('include/include', { title: '회원 정보' })%>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <body>
     <h1>회원 정보</h1>
     <!-- TODO: href 속성값 설정하기 -->
@@ -10,7 +11,7 @@
     <!-- TODO: 각 input의 value 값을 로그인 한 사람의 정보로 채우기 -->
     <form name="form_profile">
       <label for="userid">ID</label>
-      <input type="hidden" id="id" value="<%data.id%>" />
+      <input type="hidden" name="id" id="id" value="<%=data.id%>" />
       <!-- readonly: userid는 수정 불가능 (조건임) -->
       <input
         id="userid"
@@ -38,28 +39,27 @@
       <button type="button" onclick="profileEdit();">Edit</button>
       <button type="button" onclick="profileDelete();">Delete</button>
     </form>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
     <script>
       // TODO: [Login] 버튼 클릭시 서버에 회원 정보 수정 요청하기
       // POST /user/profile/edit
       function profileEdit() {
         const form = document.forms['form_profile'];
 
-        if (!form.checkValidity()) {
-          form.reportValidity();
-          return;
-        }
+        // if (!form.checkValidity()) {
+        //   form.reportValidity();
+        //   return;
+        // }
+        const data = {
+          id: form.id.value,
+          userid: form.userid.value,
+          pw: form.pw.value,
+          name: form.name.value,
+        };
 
         axios({
           method: 'POST',
           url: '/profile/edit',
-          data: {
-            id: form.id.value,
-            userid: form.userid.value,
-            pw: form.pw.value,
-            name: form.name.value,
-          },
+          data: data,
         })
           .then((res) => {
             return res.data;
@@ -78,13 +78,13 @@
           form.reportValidity();
           return;
         }
-
+        const data = {
+          id: form.id.value,
+        };
         axios({
           method: 'POST',
           url: '/profile/delete',
-          data: {
-            id: form.id.value,
-          },
+          data: data,
         })
           .then((res) => {
             console.log('1delete >> ', res);
