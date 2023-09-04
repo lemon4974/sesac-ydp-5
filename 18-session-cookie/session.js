@@ -2,12 +2,14 @@ const express = require('express');
 const session = require('express-session');
 const app = express();
 const PORT = 8080;
+const dotenv = require('dotenv');
+dotenv.config(); //꼭 적기
 
 app.set('view engine', 'ejs');
 app.use(
   session({
     // 쿠키처럼 괄호 안에 option 객체를 넣어줌
-    secret: 'MySessionSecretKey',
+    secret: process.env.SESSION,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -24,6 +26,7 @@ app.use(
 // maxAge: 쿠키 수명 (단위 ms)
 
 app.get('/', (req, res) => {
+  console.log(process.env.SESSION);
   res.render('session');
 });
 
@@ -44,7 +47,11 @@ app.get('/name', (req, res) => {
   //     name: '홍길동'
   //   }
 
-  //  express-session 미들웨어에 의해 암호화된 쿠키 내용 (현재 세션 아이디)
+  //  express-session 미들웨어에 의해 암호화된 쿠키 내용 (현재 세션 아이디 => req.sessionID)
+
+  //현재 세션 아이디(req.sessionID)
+  // : express-session 미들웨어에 의해 암호화된 쿠키 내용
+  // 개발자도구 application 탭에서 s%3A 뒷 부분에서 확인 가능
   res.send({ id: req.sessionID, name: req.session.name });
 });
 

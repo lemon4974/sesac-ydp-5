@@ -13,7 +13,7 @@ const PORT = 8080;
 // (공식문서: https://expressjs.com/en/4x/api.html#app.set views property 의 default 확인)
 
 // case2. app.set으로 뷰 템플릿 엔진 폴더 위치 지정
-// app.set('views', './views'); // 뷰 폴더로 views/(default)
+// app.set('views', './views'); // 뷰 폴더로 views/(default)(기본으로 사용)
 // app.set('views', './tests'); // 뷰 폴더로 tests/(test 폴더 내 index.ejs)
 
 // case3. static 미들웨어로 views 설정시
