@@ -203,3 +203,21 @@ for (let key in me) {
   console.log(key, me[key]);
   //여기서 점표기법을 사용할 수 없다.
 }
+
+//////////////////////////////////////
+// reduce()
+// : 배열의 각 요소에 대해서 주우진 리듀서(reducer) 함수를 실행하고, 하나의 결과값 반환
+
+// reduce((acc, cur)=> {...})
+// - acc: 누적되는 값
+// - cur: 현재 요소
+
+const numbers2 = [1, 2, 3, 4, 5];
+const initialValue = 100;
+const result = numbers.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, initialValue);
+
+console.log(result, 'reduce 값');
+
+// 누적해서 연산을 해야할 때 reduce() 사용
