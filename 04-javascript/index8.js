@@ -221,3 +221,14 @@ const result = numbers.reduce((accumulator, currentValue) => {
 console.log(result, 'reduce 값');
 
 // 누적해서 연산을 해야할 때 reduce() 사용
+
+////////////////////////////////////////////
+// 여러 배열 합칠 때 사용 가능한 메서드
+// 1. concat()
+
+const arr_1 = [1, 2, 3];
+const arr_2 = [3, 4, 5];
+console.log(arr_1.concat(arr_2)); // [1,2,3,3,4,5]
+
+// 2. ...spread
+console.log([...arr_1, ...arr_2]);
