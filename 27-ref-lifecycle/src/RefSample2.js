@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { useState } from 'react';
 
 export default function RefSample2() {
   const id = useRef(7);
