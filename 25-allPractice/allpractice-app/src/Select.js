@@ -10,7 +10,6 @@ function Select(props) {
       <select
         onChange={(e) => {
           // setImg(`${e.target.value}.png`);
-
           setData((data) => {
             console.log(e.target.value);
             return { ...data, fruit: e.target.value };
@@ -24,8 +23,15 @@ function Select(props) {
       </select>
       배경색 :
       <select
+        // onChange={(e) => {
+        //   setBackgroundColor(`${e.target.value}`);
+        // }}
         onChange={(e) => {
-          setBackgroundColor(`${e.target.value}`);
+          // setImg(`${e.target.value}.png`);
+          setData((data) => {
+            console.log(e.target.value);
+            return { ...data, background: e.target.value };
+          });
         }}
       >
         <option value="black">검정</option>
