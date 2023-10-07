@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-//함수형에서 컴포넌트를 다루려면 usestate를 사용...?
+//함수형에서 컴포넌트를 다루려면 usestate를 사용
 
 export default function Info() {
   const [data, setData] = useState([
@@ -48,7 +48,7 @@ export default function Info() {
       title: title,
     }; // 새로 추가되어야 할 정보
 
-    setComment([...comments, newComment]); // 기존의 정보를 spread로 나열 후 newComment를 추가한 상태를 새롭게 set
+    setComments([...comments, newComment]); // 기존의 정보를 spread로 나열 후 newComment를 추가한 상태를 새롭게 set
 
     //input 초기화
     setInputs({
@@ -100,7 +100,7 @@ export default function Info() {
       // console.log(item); // comment에 대한 각 원소(객체)
       // console.log(item[searchType]); // 검색 조건(key)에 대한 value 값
       // console.log(item[searchType].includes(search)); // true or false
-      if (!item[searchType].includes(search)) {
+      if (!cmt[searchType].includes(search)) {
         //searchType에 writer 혹은 title이 담겨있다
         //검색결과 없다면 null 반환
         return null;
@@ -186,7 +186,7 @@ export default function Info() {
           </tr>
         </thead>
         <tbody>
-          {comment.map((cmt, idx) => {
+          {comments.map((cmt, idx) => {
             return (
               <tr key={idx + 1} onDoubleClick={() => deleteInfo(idx + 1)}>
                 <td>{idx + 1}</td>
