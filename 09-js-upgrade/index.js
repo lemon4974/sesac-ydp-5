@@ -284,3 +284,39 @@ class Circle extends Shape {
 
 const cir1 = new Circle(4, 4, 2);
 console.log(cir1.getArea());
+
+/////////////////////////////////////////////////////////
+// 단축 평가
+// &&, ||
+
+// A && B : 두 개의 피연산자 모두 T면 T 반환
+// A || B : 두 개의 피연산자 중에서 하나만 T여도 T 반환
+
+console.log(true && true); //true
+console.log(false && true); //false
+
+console.log(true || false); //true
+console.log(false || true); //true
+
+const xx = 5;
+const yy = 7;
+
+//삼항연산자 예시
+const result1 = xx > yy ? 'xx가 큼' : 'yy가 큼';
+console.log(result1); // b가 큼
+
+// 단축평가 (&&, 논리곱)
+const result2 = xx > yy && 'xx가 큼';
+console.log(result2);
+
+const result3 = xx < yy && 'yy가 큼';
+console.log(result3);
+
+// 단축평가 (||, 논리곱)
+const result4 = xx || 100;
+console.log(result4); // 5
+
+const nameEx = '홍길동';
+const nameEx2 = null;
+console.log(nameEx || '이름없음');
+console.log(nameEx2 || '이름없음');
