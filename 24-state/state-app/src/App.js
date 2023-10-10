@@ -5,6 +5,9 @@ import PrCounter from './PrCounter';
 import SayFunction from './SayFunction';
 import CounterFunction from './CounterFunction';
 import PrCounterFunction from './PrCounterFunction';
+import TodoPrac from './TodoPrac';
+// import CssModules from './CssModules';
+// import Emotion from './Emotion';
 
 function App() {
   return (
@@ -19,6 +22,11 @@ function App() {
       <hr />
       <PrCounterFunction />
       <hr />
+      <TodoPrac />
+      {/* <hr />
+      <CssModules /> */}
+      <hr />
+      {/* <Emotion /> */}
     </div>
   );
 }
