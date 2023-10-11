@@ -1,0 +1,5 @@
+// - 믹스인(함수) 선언
+@mixin box($size) {
+  width: $size;
+  height: $size;
+}

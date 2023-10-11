@@ -1,0 +1,61 @@
+@import './variable.scss'; // SASS styling
+@import './utils.scss';
+// - 변수 선언: $ 키워드 사용
+// $color-first: red;
+// $color-second: blue;
+// $color-yellow: yellow;
+// $animation-duration: 0.4s;
+
+// - 믹스인(함수) 선언
+// @mixin box($size) {
+//   width: $size;
+//   height: $size;
+// }
+
+.container {
+  display: flex;
+
+  .box {
+    @include box(150px); // width: 100px;
+    // height: 100px;
+    border: 2px solid black;
+
+    //특징 1: & 부모 선택자 참조해서 치환
+    // &.red = .box .red
+    &.red {
+      background-color: $color-first;
+    }
+    &.orange {
+      background-color: $color-second;
+    }
+    &.yellow {
+      background-color: yellow;
+    }
+
+    &:hover {
+      $box-animation: $animation-duration * 8;
+      transform: translateY(-20px);
+      transition: transform $box-animation;
+    }
+  }
+  // 특징 2: sass 에서는 중첩으로 표현 가능
+}
+
+.btn {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+.btn-primary {
+  @extend .btn;
+  background-color: $color-second;
+}
+
+@media (max-width: #{$breakpoint-sm}) {
+  // @media (max-width: 360px)
+  //변수 값을 이용할 때는 샵과 중괄호를 이용해 표현해야함
+  .container {
+    flex-direction: column;
+  }
+}
