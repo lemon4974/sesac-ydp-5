@@ -1,0 +1,49 @@
+@import './variable.scss'; // SASS styling
+@import './utils.scss';
+
+@mixin circle($length) {
+  @keyframes move#{$length} {
+    0%,
+    100% {
+      top: 0px;
+      left: 0px;
+    }
+    25% {
+      top: 0px;
+      left: $length;
+    }
+    50% {
+      top: $length;
+      left: $length;
+    }
+    75% {
+      top: $length;
+      left: 0px;
+    }
+  }
+  animation: move#{$length} 4s infinite;
+}
+
+@mixin default() {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.pinkCircle {
+  background-color: $color-pink;
+  @include circle(100px);
+  @include default();
+}
+.yellowCircle {
+  background-color: $color-yellow;
+  animation: rotate 30s infinite;
+  @include circle(200px);
+  @include default();
+}
+.greenCircle {
+  background-color: $color-green;
+  @include circle(300px);
+  @include default();
+}

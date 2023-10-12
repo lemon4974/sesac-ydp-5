@@ -1,0 +1,27 @@
+$margin: 20px auto;
+$width: 1000px;
+$text-align: center;
+$border-radius: 20px;
+$color-item: aliceblue;
+$color-num: #87cefa;
+
+.header {
+  width: 100%;
+  height: 100px;
+  text-align: $text-align;
+  background-color: $color-num;
+  color: $color-item;
+}
+
+.num {
+  color: $color-num;
+}
+
+.item {
+  margin: $margin;
+  width: $width;
+  height: 400px;
+  text-align: $text-align;
+  border-radius: $border-radius;
+  background-color: $color-item;
+}
