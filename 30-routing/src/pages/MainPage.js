@@ -1,13 +1,14 @@
 import React from 'react';
 import { useSearchParams } from 'react-router-dom';
+import '../styles/index.css';
 
 export default function MainPage() {
   const [searchParams, setSearchParams] = useSearchParams();
-  //   console.log(searchParams);
+  // console.log(searchParams);
   console.log(searchParams.get('mode')); // Dark or null
-  console.log('ㅇㅇ', ['Main', searchParams.get['mode']].join(' '));
+  console.log('ㅇㅇ', ['Main', searchParams.get('mode')].join(' '));
   return (
-    <div className={['Main', searchParams.get['mode']].join(' ')}>
+    <div className={['Main', searchParams.get('mode')].join(' ')}>
       <h1>MainPage </h1>
       <button
         onClick={() => {
