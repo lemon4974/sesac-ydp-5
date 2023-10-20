@@ -17,6 +17,7 @@ function App() {
       <Card title="오늘 배울 것은?">
         <p>TypeScript with React</p>
       </Card>
+      <br />
       <TodoList />
     </div>
   );

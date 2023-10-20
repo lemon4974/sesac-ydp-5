@@ -8,6 +8,7 @@ interface Props {
 }
 
 export default function TodoItem({ todo, toggleComplete }: Props) {
+  // event 도 구조분해해와야 쓸 수 있다!
   return (
     <li>
       <label>
