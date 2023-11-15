@@ -98,3 +98,9 @@ function sum(a: any, b: any): any {
 console.log(sum('가', '나')); // 가나
 console.log(sum(10, 20)); // 30
 // console.log(sum(10, '얏호')); // error
+
+// [실습]
+function sum3(a: number, b: number): void {
+  console.log(a + b);
+}
+sum3(5, 11);
