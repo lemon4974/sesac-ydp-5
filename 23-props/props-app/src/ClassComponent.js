@@ -1,11 +1,12 @@
 import React from 'react';
 
-// class ClassComponent extends React.Component {
-class ClassComponent extends Component {
+class ClassComponent extends React.Component {
+  // class ClassComponent extends Component {
   // 클래스형 컴포넌트는 render 함수 필수
   student = '허리 피자';
   render() {
     const { name } = this.props;
+    console.log(this);
     return (
       <div>
         <h1>Hi {this.student}</h1>
@@ -21,7 +22,5 @@ class ClassComponent extends Component {
     );
   }
 }
-
-stati;
 
 export default ClassComponent;
