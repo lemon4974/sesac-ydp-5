@@ -23,6 +23,7 @@
         /* width: 100%; */
         /* position: relative; */
         height: 100%;
+        overflow-y: scroll;
       }
       .chat-list > div {
         margin-bottom: 20px;
@@ -36,7 +37,7 @@
         width: 80%;
         position: relative; */
         display: flex;
-        justify-content: flex-start;
+        justify-content: flex-end;
       }
       .my-chat > div {
         background-color: #c86b98; /* Light green background */
@@ -56,7 +57,7 @@
 
         /* position: relative; */
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
       }
 
       .other-chat > div {
@@ -105,6 +106,15 @@
       .d-none {
         display: none;
       }
+      .input-div {
+        display: flex;
+        flex-direction: row;
+      }
+
+      /* [실습 5] DM 기능 추가 */
+      .secret-chat {
+        background-color: pink;
+      }
     </style>
   </head>
   <body>
@@ -129,17 +139,17 @@
     </div>
     <br />
     <br />
-    <main class="chat-box d-none">
+    <main class="chat-box">
+      <!-- <main class="chat-box d-none"> -->
       <div class="chat-list">
         <!-- <p id="notice"></p> -->
         <!-- 임시 대화 데이터 -->
-        <!-- <div class="my-chat">
+        <div class="my-chat">
           <div>
-            <span>user1 </span> <br /><br />Lorem ipsum dolor sit amet
-            consectetur, adipisicing elit. Distinctio ut quae non amet velit,
-            beatae fugit recusandae voluptas, 
+            <span>user1 </span> <br /><br />
+            <div>message</div>
           </div>
-        </div> -->
+        </div>
         <!-- <div class="other-chat">
           <div>
             <span>user2 </span> <br /><br />메세지가 길어지면 width가 얼마나
@@ -149,7 +159,7 @@
         </div> -->
       </div>
       <!-- 메세지 전송 영역 -->
-      <div>
+      <div class="input-div">
         <select id="nick-list"></select
         >에게
         <input
@@ -167,7 +177,6 @@
     <script>
       let socket = io.connect(); //소켓 사용을 위한 객체 생성
       let myNick;
-
 
       socket.on('connect', () => {
         console.log('클라이언트 연결 완료 :: ', socket.id);
@@ -231,15 +240,14 @@
       // 입장 성공: 닉네임 입력창 비활성화
       socket.on('entrySuccess', (nick) => {
         myNick = nick; // 내 닉네임 저장
-        document.querySelector('#nickname').disabled = true; // 인풋 비활성화
-        document.querySelector('.entry-box > button').disabled = true; //버튼 비활성화
-        document.querySelector('.chat-box').classList.remove('d-none') = true; //채팅창 보이기
-
+        //  document.querySelector('#nickname').disabled = true; // 인풋 비활성화
+        //  document.querySelector('.entry-box > button').disabled = true; //버튼 비활성화
+        //  document.querySelector('.chat-box').classList.remove('d-none') = true; //채팅창 보이기
       });
 
       // [실습3-2] 채팅방 입장 문구 socket.id -> nickname 변환
       // 유저 목록 업데이트 (select 박스의 option 태그 개수 변경)
-      socket.on('updateNicks', (nickObjs)=> {
+      socket.on('updateNicks', (nickObjs) => {
         console.log(nickObjs);
         // nickObjs: {socket.id: nick1, socket.id : nick2, ... }
         let options = `<option value="all">전체</option>`;
@@ -247,10 +255,114 @@
         // TODO: nickObjs 반복 돌아서 option 태그 추가
         // option 태그의 value 속성 값은 socket.id, option 태그의 컨텐츠는 nick 값
         for (let key in nickObjs) {
-            options += `<option value="${key}">${nickObjs[key]}</option>`
+          options += `<option value="${key}">${nickObjs[key]}</option>`;
         }
         document.querySelector('#nick-list').innerHTML = options;
-      })
+      });
+
+      // [실습 4] 채팅창 메세지 전송 Step1
+      function send() {
+        // "send" 이벤트 전송 {닉네임, 입력창 내용}
+        const data = {
+          // 전체: all, 그 외 다른 닉네임: socket.id
+          dm: document.querySelector('#nick-list').value,
+          myNick, // 내 닉네임 key랑 value가 같음
+          msg: document.querySelector('#message').value, // 메세지 내용
+        };
+        socket.emit('send', data);
+        document.querySelector('#message').value = ''; // 인풋 초기화
+      }
+
+      // [실습 4] 채팅창 메세지 전송 Step2
+      // newMessage 이벤트를 받아서 { 닉네임, 입력창내용 }
+      // 내가 보낸 메세지; 오른쪽
+      // 다른 사람이 보낸 메세지; 왼쪽
+      socket.on('newMessage', (data) => {
+        // console.log(data); // {nick: 'a', msg: 'cc'}
+
+        // 내가 생성해야할 채팅 구조
+        // <div class="my-chat">
+        //   <div>
+        //     <span>user1 </span> <br /><br />
+        //     <div>message</div>
+        //   </div>
+        // </div>
+
+        let chatList = document.querySelector('.chat-list');
+        let div = document.createElement('div'); // .my-chat or .other-chat
+        let divChat = document.createElement('div'); // 가장 안쪽 div 생성
+
+        if (myNick === data.nick) {
+          // 내가 보낸 메세지
+          div.classList.add('my-chat');
+        } else {
+          // 다른 사람이 보낸 메세지
+          div.classList.add('other-chat');
+        }
+
+        if (data.dm) {
+          div.classList.add('secret-chat');
+          divChat.textContent = data.dm; // '(속닥속닥)'
+        }
+
+        divChat.textContent += `${data.nick} : ${data.msg}`;
+        div.append(divChat);
+        chatList.append(div);
+
+        // 메세지가 많아져서 스크롤이 생기더라도 하단 고정
+        chatList.scrollTop = chatList.scrollHeight;
+
+        // 내가 쓴 코드
+        // if (myNick === data.nick) {
+        //   document.querySelector('.chat-list').insertAdjacentHTML(
+        //     'beforeend',
+        //     `
+        //     <div class="my-chat">
+        //         <div>
+        //             <span>${myNick}</span> <br /><br />
+        //             <div>${message}</div>
+        //         </div>
+        //      </div>
+        //     `
+        //   );
+        // } else {
+        //   document.querySelector('.chat-list').insertAdjacentHTML(
+        //     'beforeend',
+        //     `<div class="other-chat">
+        //                 <div class="other-pic"></div>
+        //             <div class="other-chat-msg">${data.nick} : ${data.msg}</div>
+        //             </div>`
+        //   );
+        // }
+      });
+
+      // newMessage 이벤트를 받아서 {닉네임, 입력창내용}
+      // 내가 보낸 메세지; 오른쪽
+      // 다른 사람이 보낸 메세지; 왼쪽
+
+      //내 답 실습 5
+      // socket.on('dmMessage', (data) => {
+      //   console.log('dmMessage', data);
+
+      //   let chatList = document.querySelector('.chat-list');
+      //   let div = document.createElement('div'); // .my-chat or .other-chat
+      //   let divChat = document.createElement('div'); // 가장 안쪽 div 생성
+
+      //   if (myNick === data.nick) {
+      //     // 내가 보낸 메세지
+      //     div.classList.add('my-chat');
+      //   } else {
+      //     // 다른 사람이 보낸 메세지
+      //     div.classList.add('other-chat');
+      //   }
+
+      //   divChat.textContent = `DM from ${data.myNick} : ${data.msg}`;
+      //   div.append(divChat);
+      //   chatList.append(div);
+
+      //   // 메세지가 많아져서 스크롤이 생기더라도 하단 고정
+      //   chatList.scrollTop = chatList.scrollHeight;
+      // });
     </script>
   </body>
 </html>

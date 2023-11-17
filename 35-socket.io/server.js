@@ -62,6 +62,8 @@ io.on('connection', (socket, data) => {
   //   emit() from server
   // - socket.emit(event_name, data): 해당 클라이언트에게만 이벤트, 데이터를 전송
   // - io.emit(event_name, data) : 서버에 접속한 모든 클라이언트 전송
+  // - io.to(소켓아이디).emit(event_name,data): 소켓아이디에 해당하는 data
+
   socket.on('setNick', (nick) => {
     console.log(`닉네임 설정 완료 :: ${nick} 님 입장`);
     // 프론트에서 입력한 nick 이 nickObjs 객체에 존재하는지 검사
@@ -88,6 +90,44 @@ io.on('connection', (socket, data) => {
     io.emit('notice', `${nickObjs[socket.id]} 님이 퇴장하셨습니다.`);
     delete nickObjs[socket.id];
     updateList();
+  });
+
+  // [실습 4] 채팅창 메세지 전송 Step1
+  // send 이벤트를 받아서
+  // 모두에게 newMessage 이벤트로 {닉네임, 입력창 내용} 데이터를 전송
+  socket.on('send', (data) => {
+    console.log('send 이벤트로 받은 data :: ', data);
+
+    // [실습 5]
+    // 디엠인지 아닌지 구분해서
+    // io.to(소켓아이디).emit(event_name, data): 소켓아이디에 해당하는 클라이언트에게만 전송
+    if (data.dm !== 'all') {
+      // "DM" 발송
+      // 내 답 실습 5
+      // io.to(data.dm).emit('dmMessage', data);
+      // io.to(socket.id).emit('dmMessage', data);
+      // console.log('dmMessage 이벤트로 보내는 data :: ', data);
+
+      // 리더님 답
+      let dmSocketId = data.dm;
+      const sendData = {
+        nick: data.myNick,
+        msg: data.msg,
+        dm: '(속닥속닥) ',
+      };
+      // DM이 자기 자신에게 모내는 지 확인
+      if (dmSocketId === socket.id) {
+        // 자신에게 보내는 DM 이라면 한번만 emit
+        socket.emit('newMessage', sendData); // 자기자신한테 보여주는 메세지
+      } else {
+        //자기 자신에게 보내는 dm이 아니라면 target과 자신에게 둘 다 보냄
+        io.to(dmSocketId).emit('newMessage', sendData); // 디엠을 보내야하는 타켓 소켓아이디한테 메세지 전송
+        socket.emit('newMessage', sendData); // 자기자신한테 보여주는 메세지
+      }
+    } else {
+      // "전체" 발송
+      io.emit('newMessage', { nick: data.myNick, msg: data.msg });
+    }
   });
 });
 
